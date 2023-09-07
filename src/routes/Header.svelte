@@ -4,14 +4,14 @@
 	import download from '$lib/images/download.png';
 </script>
 
-<header class="header bg-gray-300 h-11 flex justify-between items-center">
+<header class="header h-11 flex justify-between items-center" style="background-color: #2d3340;">
 	<nav>
 		<div class="flex mx-2">
 			<ul class="flex h-7">
-				<li class:active={$page.url.pathname === '/'} class="mr-3 bg-gray-400 w-36 text-center">
+				<li class:active={$page.url.pathname === '/'} class="mr-3 w-36 text-center text-white" style="background-color: #586278;">
 					<a href="/">Stellar tool</a>
 				</li>
-				<li class:active={$page.url.pathname === '/database'} class="mr-3 bg-gray-400 w-36 text-center">
+				<li class:active={$page.url.pathname === '/database'} class="mr-3 bg-gray-400 w-36 text-center text-white" style="background-color: #586278;">
 					<a href="/about">Star database</a>
 				</li>
 			</ul>

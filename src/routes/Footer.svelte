@@ -8,7 +8,7 @@
     });
 </script>
 
-<footer class="bg-gray-400 h-10 ">
+<footer class="h-10 text-white" style="background-color: #2d3340;">
     <div class="p-1 flex justify-center content-center">
         <p>{stringDate}</p>
     </div>
