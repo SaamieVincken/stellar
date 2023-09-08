@@ -12,7 +12,7 @@
 					<a href="/">Stellar tool</a>
 				</li>
 				<li class:active={$page.url.pathname === '/database'} class="mr-3 bg-gray-400 w-36 text-center text-white" style="background-color: #586278;">
-					<a href="/about">Star database</a>
+					<a href="/database">Star database</a>
 				</li>
 			</ul>
 		</div>

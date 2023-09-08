@@ -1,7 +1,7 @@
 
-function sequenceCalc(luminosity: number, mass: number, temperature: number): string {
+export function sequenceCalc(luminosity: number, solarMass: number, temperature: number): string {
     let sequence;
-    const solarMass = massToSolar(mass);
+ //   const solarMass = massToSolar(mass);
     if (luminosity > 100 && solarMass > 8 && temperature > 10000) {
         sequence = StellarPhases.MainSequence;
     }
@@ -29,7 +29,7 @@ function massToSolar(mass: number): number{
 }
 
 //Calculating the phase a star is in:
-function phaseCalc(luminosity: number, mass: number, temperature: number): string{
+export function phaseCalc(luminosity: number, mass: number, temperature: number): string{
     let phase;
     let sequence;
     sequence = sequenceCalc(luminosity, mass, temperature);
@@ -54,7 +54,7 @@ function phaseCalc(luminosity: number, mass: number, temperature: number): strin
 }
 
 //Calculate the main sequence phase the star is in:
-function mainSequencePhase(solarMass: number): string {
+export function mainSequencePhase(solarMass: number): string {
     let phase;
     if (solarMass < 0.5) {
         phase = MainSequenceEnum.YoungMS;
