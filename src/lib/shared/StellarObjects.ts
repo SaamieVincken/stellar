@@ -83,7 +83,7 @@ export class WhiteDwarf {
     private surfaceTemperature: string = "Around 8,000 to 40,000 K.";
     private phaseDuration: string = "Billions of years, as they slowly cool down.";
     private diameter: string = "About the size of Earth, roughly 10,000 kilometers.";
-    private img: string = "/src/" + "lib/images/White_Dwarf.png";
+    private img: string = "/src/" + "lib/images/White_Dwarf .png";
 }
 
 export class RedGiant {
@@ -93,5 +93,5 @@ export class RedGiant {
     private surfaceTemperature: string = "Surface temperature 4,000 K.";
     private phaseDuration: string = "Phase lasts for +- 1 billion years before transforming into white dwarfs.";
     private diameter: string = "62 million to 620 million miles in diameter (100 million to 1 billion KM).";
-    private img: string = "/src/" + "lib/images/sun.png";
+    private img: string = "src/lib/images/sun.png";
 }

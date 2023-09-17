@@ -1,13 +1,10 @@
 <script>
-    import { phaseCalc } from '$lib/shared/Calculations.ts';
+    import {phaseCalc} from '$lib/shared/phaseCalc';
     import PhaseInformation from './PhaseInformation.svelte';
-    import TimeBar from "./TimeBar.svelte";
-
     let amountMass = "";
     let amountLuminosity = "";
     let amountTemperature = "";
     export let phase = "Unknown";
-
     function editText(field, fieldValue) {
         if (fieldValue === `Input ${field} (kg)`) {
             fieldValue = "";
