@@ -11,7 +11,7 @@ export function sequenceCalc(luminosity: number, solarMass: number, temperature:
     } else if (solarMass > 8 && luminosity > 100 && temperature > 10000) {
         sequence = StellarPhasesEnum.SuperNova;
     } else if (luminosity > 100 && solarMass > 8 && temperature > 10000) {
-        sequence = mainSequencePhase(solarMass); // Determine which phase in the main sequence
+        sequence = mainSequencePhase(solarMass, temperature); // Determine which phase in the main sequence
     }else if (solarMass > 1.4 && solarMass <= 3) {
         sequence = StellarPhasesEnum.NeutronStar;
     } else if (luminosity < 10 && solarMass < 2 && temperature < 4000) {

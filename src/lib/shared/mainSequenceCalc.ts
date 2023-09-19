@@ -1,13 +1,13 @@
 import {MainSequenceEnum} from "./MainSequenceEnum";
 
 //Calculate what part of the main sequence the star is in:
-export function mainSequencePhase(solarMass: number): string {
+export function mainSequencePhase(solarMass: number, temperature: number): string {
     let MSphase;
-    if (solarMass >= 0.08 && solarMass < 1.2) {
+    if (solarMass >= 0.08 && solarMass < 1.2 && temperature >= 2500 && temperature <= 3500) {
         MSphase = MainSequenceEnum.RedDwarf;
-    } else if (solarMass >= 1.2 && solarMass <= 2.1) {
+    } else if (solarMass >= 1.2 && solarMass <= 2.1 && temperature >= 5000 && temperature <= 6000) {
         MSphase = MainSequenceEnum.GType;
-    } else if (solarMass > 2.1 && solarMass <= 20) {
+    } else if (solarMass > 2.1 && solarMass <= 20 && temperature >= 15000 && temperature <= 30000) {
         MSphase = MainSequenceEnum.BlueGiant;
     } else {
         MSphase = "Unknown";

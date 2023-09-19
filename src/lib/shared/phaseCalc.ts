@@ -6,7 +6,7 @@ import * as phaseObjects from './StellarObjects';
 //Calculating the phase a star is in:
 export function phaseCalc(luminosity: number, mass: number, temperature: number) {
     let sequence;
-    sequence = sequenceCalc(luminosity, mass, temperature); // You need to implement sequenceCalc
+    sequence = sequenceCalc(luminosity, mass, temperature);
 
     if (sequence === StellarPhasesEnum.ProtoStar) {
         return new phaseObjects.ProtoStar();
