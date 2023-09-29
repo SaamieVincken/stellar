@@ -1,10 +1,8 @@
 <script>
     import TimeBar from "./TimeBar.svelte";
     import { BlackHole } from "$lib/shared/Phase/StellarObjects";
-    import ImageExample from "../stellar-models/imageExample.svelte";
     import {savedPhase} from "./phaseStore.js";
     import ThreeCube from '../stellar-models/redGiant.svelte'
-    import RedGiant from "../stellar-models/redGiant.svelte";
     let phase = "Unknown";
 
     savedPhase.subscribe((value) => {
@@ -23,7 +21,9 @@
     </div>
 </div>
 
-<TimeBar/>
+<div>
+    <TimeBar/>
+</div>
 
 <div class="fixed flex items-center justify-center w-full">
     <div class="mt-80 w-1/2 text-white">
@@ -39,7 +39,6 @@
                 <p>{phase.phaseDuration}</p>
                 <p>{phase.diameter}</p>
             {/if}
-
         {/if}
     </div>
 </div>

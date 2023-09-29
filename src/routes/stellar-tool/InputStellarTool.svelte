@@ -1,6 +1,29 @@
+<style>
+    /* Define the common styles for the input boxes */
+    .input-style {
+        border: 2px solid #e8e8e8;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #212121;
+        font-size: small;
+        font-weight: bold;
+        text-align: center;
+        color: #e8e8e8;
+        width: 150px; /* Adjust the width as needed */
+        margin: 5px; /* Adjust the margin as needed */
+    }
+
+    .input-style:focus {
+        outline-color: white;
+        background-color: #212121;
+        color: #e8e8e8;
+        box-shadow: 5px 5px #888888;
+    }
+</style>
+
 <script>
     import { GetPhases } from '$lib/shared/Phase/PhaseCalc';
-    import {savedPhase} from "./phaseStore.js";
+    import { savedPhase } from "./phaseStore.js";
 
     let amountMass = "";
     let amountLuminosity = "";
@@ -34,7 +57,7 @@
 
 <div class="flex flex-col ml-20 mt-7 text-black">
     <input
-            class="border border-gray-600 w-1/6 m-1 h-7"
+            class="input-style"
             type="text"
             placeholder="Input mass (M☉)"
             bind:value={amountMass}
@@ -45,7 +68,7 @@
     />
 
     <input
-            class="border border-gray-600 w-1/6 m-1 h-7"
+            class="input-style"
             type="text"
             placeholder="Input luminosity (W)"
             bind:value={amountLuminosity}
@@ -55,7 +78,7 @@
     />
 
     <input
-            class="border border-gray-600 w-1/6 m-1 h-7"
+            class="input-style"
             type="text"
             placeholder="Input temperature (K)"
             bind:value={amountTemperature}
@@ -64,4 +87,5 @@
         }}
     />
 </div>
+
 
