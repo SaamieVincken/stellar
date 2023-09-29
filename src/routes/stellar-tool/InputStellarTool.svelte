@@ -1,10 +1,11 @@
 <script>
-    import {phaseCalc} from '$lib/shared/phaseCalc';
-    import PhaseInformation from './PhaseInformation.svelte';
+    import { GetPhases } from '$lib/shared/Phase/PhaseCalc';
+    import {savedPhase} from "./phaseStore.js";
+
     let amountMass = "";
     let amountLuminosity = "";
     let amountTemperature = "";
-    export let phase = "Unknown";
+
     function editText(field, fieldValue) {
         if (fieldValue === `Input ${field} (kg)`) {
             fieldValue = "";
@@ -16,7 +17,7 @@
                 amountTemperature = fieldValue;
             }
         }
-        phase = calculateStarProperties(amountMass, amountLuminosity, amountTemperature);
+        savedPhase.set(calculateStarProperties(amountMass, amountLuminosity, amountTemperature));
     }
 
     function calculateStarProperties(mass, luminosity, temperature) {
@@ -24,14 +25,14 @@
             const parsedMass = parseFloat(mass);
             const parsedLuminosity = parseFloat(luminosity);
             const parsedTemperature = parseFloat(temperature);
-            return phaseCalc(parsedLuminosity, parsedMass, parsedTemperature);
+            return GetPhases(parsedLuminosity, parsedMass, parsedTemperature);
         } else {
             return "Unknown";
         }
     }
 </script>
 
-<div class="flex flex-col justify-left ml-20 mt-7 text-black">
+<div class="flex flex-col ml-20 mt-7 text-black">
     <input
             class="border border-gray-600 w-1/6 m-1 h-7"
             type="text"
@@ -64,7 +65,3 @@
     />
 </div>
 
-
-<div class="">
-    <PhaseInformation {phase} />
-</div>

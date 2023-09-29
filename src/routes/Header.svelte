@@ -11,8 +11,8 @@
 				<li class:active={$page.url.pathname === '/'} class="mr-3 w-36 text-center text-white" style="background-color: #586278;">
 					<a href="/">Stellar tool</a>
 				</li>
-				<li class:active={$page.url.pathname === '/database'} class="mr-3 bg-gray-400 w-36 text-center text-white" style="background-color: #586278;">
-					<a href="/database">Star database</a>
+				<li class:active={$page.url.pathname === '/redGiant'} class="mr-3 bg-gray-400 w-36 text-center text-white" style="background-color: #586278;">
+					<a href="./stellar-models/redGiant.svelte">Star database</a>
 				</li>
 			</ul>
 		</div>

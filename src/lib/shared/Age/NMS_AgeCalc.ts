@@ -2,7 +2,7 @@ const solarLuminosity = 3.828e26; // Solar luminosity in Watts
 const gravitationalConstant = 6.674e-11; // Gravitational constant in m^3/kg/s^2
 const secondsInAYear = 3.154e7;
 
-//ToDo: Add exception handling
+//This is to calculate the lifetime of stars in non- main sequence phases:
 export function calculateLifetime(luminosity: number, temperature: number, solarMass: number): {
     superNova: number;
     whiteDwarf: number;
