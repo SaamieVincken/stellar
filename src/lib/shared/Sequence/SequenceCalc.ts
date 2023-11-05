@@ -1,15 +1,25 @@
-import {Sequences} from "./SequenceEnum";
+import { Sequences } from "./SequenceEnum";
 
-export function sequenceCalc(luminosity: number, solarMass: number, temperature: number): string {
+/**
+ * Calculates the stellar sequence based on solar luminosity, solar mass, and temperature.
+ *
+ * @param {number} luminosity - The luminosity of the star.
+ * @param {number} mass - The solar mass of the star.
+ * @param {number} temperature - The temperature of the star.
+ * @returns {string} The calculated stellar sequence, either "Main sequence" or "Other sequences".
+ */
+export function sequenceCalc(luminosity: number, mass: number, temperature: number): string {
     let sequence;
-
-    if (luminosity >= 100 && solarMass > 8 && temperature > 10000) {
+    if (luminosity > 0.1 && luminosity <= 10 &&
+        mass < 20 &&
+        temperature > 10000) {
         sequence = Sequences.MainSequence;
-    }else{
-        sequence = Sequences.NonMainSequence;
+    } else {
+        sequence = Sequences.OtherSequences;
     }
     return sequence;
 }
+
 
 
 

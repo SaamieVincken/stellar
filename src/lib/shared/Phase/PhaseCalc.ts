@@ -2,6 +2,14 @@ import * as phaseObjects from './StellarObjects';
 import {sequenceCalc} from '../Sequence/SequenceCalc';
 import {Sequences} from '../Sequence/SequenceEnum';
 
+
+/**
+ *
+ * @param luminosity
+ * @param solarMass
+ * @param temperature
+ * @constructor
+ */
 export function GetPhases(luminosity :number, solarMass: number, temperature : number) {
     const sequence = sequenceCalc(luminosity, solarMass, temperature);
 
@@ -13,7 +21,15 @@ export function GetPhases(luminosity :number, solarMass: number, temperature : n
     }
 }
 
-// Calculate the Non-Main Sequence (NMS) phase of a star
+
+/**
+ * Calculate the Non-Main Sequence (NMS) phase of a star
+ * @param {number} solarMass
+ * @param {number} temperature
+ * @param {number} luminosity
+ * @return {ProtoStar | NeutronStar | Supernova | WhiteDwarf | null | BlackHole | RedGiant}
+ * @constructor
+ */
 export function NMS_phaseCalc(solarMass: number, temperature: number, luminosity: number) {
     if (solarMass < 2 && solarMass > 0.08) {
         if (luminosity <= 0.01 && temperature < 500) {
@@ -39,8 +55,16 @@ export function NMS_phaseCalc(solarMass: number, temperature: number, luminosity
     return null; // Unknown
 }
 
-// Calculate the Main Sequence (MS) phase of a star based on the Hertzsprung-Russell diagram
-export function MS_phaseCalc(solarMass: number, temperature: number, luminosity: number) {
+/**
+ * Calculate the Main Sequence (MS) phase of a star based on the Hertzsprung-Russell diagram
+ * @param {number} solarMass
+ * @param {number} temperature
+ * @param {number} luminosity
+ * @return {BlueGiant | GType | RedDwarf | null}
+ * @constructor
+ */
+export function MS_phaseCalc(solarMass: number, temperature: number, luminosity: number):
+    phaseObjects.BlueGiant | phaseObjects.GType | phaseObjects.RedDwarf | null {
     if (solarMass >= 0.08 && solarMass < 1.2) {
         if (temperature >= 2500 && temperature <= 3500 && luminosity < 0.1) {
             return new phaseObjects.RedDwarf();
@@ -56,6 +80,8 @@ export function MS_phaseCalc(solarMass: number, temperature: number, luminosity:
     }
     return null; // Unknown
 }
+
+
 
 
 

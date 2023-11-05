@@ -11,6 +11,9 @@ export function calculateLifetime(luminosity: number, temperature: number, solar
     redGiant: number;
     neutronStar: number;
 } {
+    // Other equation for age: RotationRate .pow-2
+    // o = 5.67 * 10 pow-8
+    // Rotation rate = 4pioT4L
     // Calculation of the stellar radius based on luminosity and temperature
     const radius = Math.sqrt(luminosity * solarLuminosity / (4 * Math.PI * temperature * temperature));
 

@@ -3,7 +3,13 @@ const solarMass = 2e30;
 const solarLuminosity = 3.828e26;
 const K = 1.5e10;
 
-// Calculate the main sequence lifetime
+/**
+ * Calculate the main sequence lifetime
+ * @param {number} stellarMass
+ * @param {number} stellarTemperature
+ * @param {number} stellarLuminosity
+ * @return {number}
+ */
 export function calculateMainSequenceLifetime(
     stellarMass: number,
     stellarTemperature: number,
