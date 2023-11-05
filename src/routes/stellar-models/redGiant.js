@@ -1,8 +1,7 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { Plane } from 'three'; // Import Plane class
 
-let scene, camera, renderer, globe, controls, light;
-let rotating = false; // Flag to track if the globe is rotating
+let scene, backgroundScene, camera, renderer, globe, controls, light, dragControls;
 let rotationSpeed = 0.001; // Initial rotation speed
 
 export function initializeRedGiant() {
@@ -13,6 +12,9 @@ export function initializeRedGiant() {
     // Create scene
     scene = new THREE.Scene();
 
+    // Create a separate scene for the background
+    backgroundScene = new THREE.Scene();
+
     // Create camera
     camera = new THREE.PerspectiveCamera(75, canvasWidth / canvasHeight, 1, 1000);
     camera.position.z = 5;
@@ -20,66 +22,77 @@ export function initializeRedGiant() {
     // Create renderer with a transparent background and shadows
     renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(canvasWidth, canvasHeight); // Set custom canvas dimensions
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Use soft shadows
-
+    renderer.setSize(canvasWidth, canvasHeight);
     // Set CSS style to make the renderer centered within the container
     const rendererContainer = document.getElementById('renderer-container');
-    rendererContainer.style.position = 'relative'; // Set to relative positioning
-    rendererContainer.style.width = `${canvasWidth}px`; // Use custom width
-    rendererContainer.style.height = `${canvasHeight}px`; // Use custom height
     rendererContainer.appendChild(renderer.domElement);
 
-    // Create a rotating 3D globe
+    const textureLoader = new THREE.TextureLoader();
+    const texture = textureLoader.load('src/lib/images/Lava.jpg');
+
     const sphereRadius = 2.8; // Adjust the radius as needed
     const geometry = new THREE.SphereGeometry(sphereRadius, 64, 32); // Adjust the parameters as needed
-    const material = new THREE.MeshStandardMaterial({ // Use MeshStandardMaterial for shadows
-        color: 0x00ff00, // Adjust the color as needed
+    const material = new THREE.MeshStandardMaterial({
+        map: texture,
         transparent: true,
-        opacity: 0.9,
+        opacity: 0.8,
         side: THREE.DoubleSide,
+        roughness: 0.5,
+        metalness: 0.5,
     });
 
-    globe = new THREE.Mesh(geometry, material);
-    globe.castShadow = true; // Allow the globe to cast shadows
-    scene.add(globe);
+    const glowMaterial = new THREE.MeshBasicMaterial({
+        map: texture,
+        color: 0xff6600,
+        side: THREE.BackSide,
+        blending: THREE.AdditiveBlending,
+        transparent: true,
+        opacity: 0.08,
+        receiveShadow: true,
+    });
+
+    const glowSphere = new THREE.Mesh(geometry.clone(), glowMaterial);
+    glowSphere.scale.set(1.05, 1.05, 1.05);
+    scene.add(glowSphere);
 
     // Light source for shadows
-    light = new THREE.DirectionalLight(0xffffff, 1);
-    light.position.set(5, 10, 7);
-    light.castShadow = true;
+    light = new THREE.DirectionalLight(0xFF5733, 3);
+    light.position.set(5, 5, 7);
     scene.add(light);
 
-    // Create OrbitControls for interactive rotation
-    controls = new OrbitControls(camera, renderer.domElement);
-    controls.minDistance = 1;
-    controls.maxDistance = 10;
-    controls.enablePan = false; // Disable panning
+    const pulseSpeed = 0.003; // Adjust the pulsation speed
+    const initialScale = 1.05; // Adjust the initial scale
+    glowSphere.scale.set(initialScale, initialScale, initialScale);
 
-    // Event listener for mouse down
-    document.addEventListener('mousedown', () => {
-        rotating = true;
-        rotationSpeed = 0.005; // Increase rotation speed when mouse is held
-    });
+    function animateGlow() {
+        const scaleFactor = initialScale + Math.sin(Date.now() * pulseSpeed) * 0.03;
+        glowSphere.scale.set(scaleFactor, scaleFactor, scaleFactor);
+        requestAnimationFrame(animateGlow);
+    }
 
-    // Event listener for mouse up
-    document.addEventListener('mouseup', () => {
-        rotating = false;
-        rotationSpeed = 0.001; // Reset rotation speed when mouse is released
-    });
+// Start the animation loop
+    animateGlow();
+
+    const localPlane = new Plane(new THREE.Vector3(0, -1, 0), 0.8);
+    const globalPlane = new Plane(new THREE.Vector3(-1, 0, 0), 0.1);
+    material.clippingPlanes = [localPlane]; // Apply local clipping plane to the material
+    material.clipShadows = true; // Enable shadows for the clipped objects
+
+    globe = new THREE.Mesh(geometry, material);
+    globe.castShadow = true;
+    scene.add(globe);
 
     // Animation loop for rotating the globe
     function animate() {
-        if (rotating) {
-            // Rotate the globe faster when mouse is held
-            globe.rotation.x += rotationSpeed * 25;
-            globe.rotation.y += rotationSpeed * 25;
-        }
+
+        // Rotate the globe continuously
+        globe.rotation.x += rotationSpeed * 6;
+        globe.rotation.y += rotationSpeed * 6;
 
         // Update the light direction based on the globe's rotation
         const lightPosition = light.position;
         lightPosition.x = 5 * Math.cos(globe.rotation.y);
+        lightPosition.y = 5 * Math.cos(globe.rotation.z);
         lightPosition.z = 7 * Math.sin(globe.rotation.y);
 
         render();
@@ -87,12 +100,13 @@ export function initializeRedGiant() {
     }
 
     function render() {
+        renderer.render(backgroundScene, camera);
         renderer.render(scene, camera);
     }
 
     animate();
 
-    // Handle window resize (optional)
+    // Handle window resize
     function onWindowResize() {
         camera.aspect = canvasWidth / canvasHeight; // Use custom canvas dimensions
         camera.updateProjectionMatrix();

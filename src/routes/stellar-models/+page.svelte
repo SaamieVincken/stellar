@@ -7,6 +7,8 @@
 </svelte:head>
 
 
-<div>
-    <ThreeCube />
+<div class="fixed flex items-center justify-center w-full">
+    <div class="-mt-52">
+        <ThreeCube />
+    </div>
 </div>

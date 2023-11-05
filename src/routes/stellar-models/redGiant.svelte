@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { initializeRedGiant } from './redGiant'; // Update the path as needed
+    import { initializeRedGiant } from './redGiant';
 
     onMount(() => {
         initializeRedGiant();
