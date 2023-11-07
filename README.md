@@ -22,7 +22,7 @@ Three.js for 3D modeling: https://threejs.org/docs/#manual/en/introduction/Insta
 ## Installation
 This project is based on Javascript framework Svelte:
 
-Using Svelte at https://svelte.dev/docs/introduction \n
+Using Svelte at https://svelte.dev/docs/introduction 
 
 Using SvelteKit at https://kit.svelte.dev/docs/introduction
 
