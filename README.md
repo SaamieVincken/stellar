@@ -16,11 +16,14 @@ For each phase the conditions for inclusion are defined as criteria for identify
 
 ## Dependencies
 TailwindCSS: https://tailwindcss.com/docs/installation
+
 Three.js for 3D modeling: https://threejs.org/docs/#manual/en/introduction/Installation
 
 ## Installation
 This project is based on Javascript framework Svelte:
+
 Using Svelte at https://svelte.dev/docs/introduction \n
+
 Using SvelteKit at https://kit.svelte.dev/docs/introduction
 
 ## Contact
@@ -28,6 +31,7 @@ Email: saamievincken@protonmail.com
 
 ## Repository
 GitHub: https://github.com/SaamieVincken/stellar
+
 GitLab: https://git.fhict.nl/I503004/stellar
 
 ## Documentation
