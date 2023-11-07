@@ -31,4 +31,6 @@ GitHub: https://github.com/SaamieVincken/stellar
 GitLab: https://git.fhict.nl/I503004/stellar
 
 ## Documentation
-ToDo: Add documentation links
+Stellar sequences and phases: [Download PDF](https://github.com/SaamieVincken/stellar/blob/main/V2_Astronomical%20research%20-%20Stellar%20phases.pdf)
+
+Stellar color spectrum: [Download PDF](https://github.com/SaamieVincken/stellar/blob/main/Astronomical%20research%20-%20Color%20spectrum.pdf)
