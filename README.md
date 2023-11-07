@@ -1,38 +1,34 @@
-# create-svelte
+# Stellar Project README
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Introduction
+This is the README file for the Stellar Project, a project where stellar phases and values are converted to 3D models. 
 
-## Creating a project
+## Table of Contents
+1. [Getting Started](#getting-started)
+2. [Depencencies](#depencencies)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Getting Started
+For each phase the conditions for inclusion are defined as criteria for identifying in which phase a star is in, focusing on parameters like luminosity, mass, and surface temperature. These criteria are used for implementation of the algorithm for stellar phases. The values contribute to the understanding of a star’s evolution and how to visualize the phases for the 3D models.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Dependencies
+Install tailwindCSS as CSS toolkit: https://tailwindcss.com/docs/installation
+Install three.js for 3D modeling: https://threejs.org/docs/#manual/en/introduction/Installation
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Installation
+This project is based on Javascript framework Svelte:
+Using Svelte at https://svelte.dev/docs/introduction
+Using SvelteKit at https://kit.svelte.dev/docs/introduction
 
-## Developing
+## Contact
+Email: saamievincken@protonmail.com
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Repository
+GitHub: https://github.com/SaamieVincken/stellar
+GitLab: https://git.fhict.nl/I503004/stellar
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Documentation
+ToDo: Add documentation links
