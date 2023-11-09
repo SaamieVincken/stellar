@@ -14,3 +14,4 @@ const pi = Math.PI;
 export function calculateEffectiveTemperature(luminosity: number, radius: number): number {
     return Math.pow((luminosity / (4 * pi * Math.pow(radius, 2) * stefanBoltzmannConstant)), 0.25);
 }
+

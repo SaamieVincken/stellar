@@ -1,38 +1,40 @@
-# create-svelte
+# Stellar Project README
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Introduction
+This is the README file for the Stellar Project, a project where stellar phases and values are converted to 3D models. 
 
-## Creating a project
+## Table of Contents
+1. [Getting Started](#getting-started)
+2. [Dependencies](#dependencies)
+3. [Installation](#installation)
+4. [Contact](#contact)
+5. [Repository](#repository)
+6. [Documentation](#documentation)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Getting Started
+For each phase the conditions for inclusion are defined as criteria for identifying in which phase a star is in, focusing on parameters like luminosity, mass, and surface temperature. These criteria are used for implementation of the algorithm for stellar phases. The values contribute to the understanding of a star’s evolution and how to visualize the phases for the 3D models.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Dependencies
+TailwindCSS: https://tailwindcss.com/docs/installation
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Three.js for 3D modeling: https://threejs.org/docs/#manual/en/introduction/Installation
 
-## Developing
+## Installation
+This project is based on Javascript framework Svelte:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Using Svelte at https://svelte.dev/docs/introduction 
 
-```bash
-npm run dev
+Using SvelteKit at https://kit.svelte.dev/docs/introduction
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Contact
+Email: saamievincken@protonmail.com
 
-## Building
+## Repository
+GitHub: https://github.com/SaamieVincken/stellar
 
-To create a production version of your app:
+GitLab: https://git.fhict.nl/I503004/stellar
 
-```bash
-npm run build
-```
+## Documentation
+Stellar sequences and phases: [Download PDF](https://github.com/SaamieVincken/stellar/blob/main/V2_Astronomical%20research%20-%20Stellar%20phases.pdf)
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Stellar color spectrum: [Download PDF](https://github.com/SaamieVincken/stellar/blob/main/Astronomical%20research%20-%20Color%20spectrum.pdf)
