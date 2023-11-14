@@ -1,6 +1,6 @@
-import {calculateEffectiveTemperature} from "$lib/shared/StellarProperties/EffectiveTemperature";
-import {calculateStellarRadius} from "$lib/shared/StellarProperties/StellarRadius";
-import {calculateStellarDensity} from "$lib/shared/StellarProperties/StellarDensity";
+import {calculateStellarRadius} from "./StellarProperties/StellarRadius";
+import {calculateEffectiveTemperature} from "./StellarProperties/EffectiveTemperature";
+import {calculateStellarDensity} from "./StellarProperties/StellarDensity";
 
 export class Star {
     sequence: string;

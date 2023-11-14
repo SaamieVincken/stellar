@@ -6,8 +6,8 @@ let rotationSpeed = 0.001; // Initial rotation speed
 
 export function initializeRedGiant() {
     // Custom canvas dimensions
-    const canvasWidth = 400; // Set your desired canvas width
-    const canvasHeight = 300; // Set your desired canvas height
+    const canvasWidth = 400;
+    const canvasHeight = 300;
 
     // Create scene
     scene = new THREE.Scene();
@@ -70,7 +70,7 @@ export function initializeRedGiant() {
         requestAnimationFrame(animateGlow);
     }
 
-// Start the animation loop
+    // Start the animation loop for the glow
     animateGlow();
 
     const localPlane = new Plane(new THREE.Vector3(0, -1, 0), 0.8);
@@ -82,7 +82,7 @@ export function initializeRedGiant() {
     globe.castShadow = true;
     scene.add(globe);
 
-    // Animation loop for rotating the globe
+    // Animation for rotating the globe
     function animate() {
 
         // Rotate the globe continuously
@@ -104,6 +104,7 @@ export function initializeRedGiant() {
         renderer.render(scene, camera);
     }
 
+    // Call animate globe
     animate();
 
     // Handle window resize
