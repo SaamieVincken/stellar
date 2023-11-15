@@ -12,7 +12,7 @@ import {Sequences} from '../Sequence/SequenceEnum';
  */
 export function GetPhases(luminosity :number, solarMass: number, temperature : number) {
     const sequence = sequenceCalc(luminosity, solarMass, temperature);
-
+    console.log(sequence);
     switch (sequence) {
         case Sequences.MainSequence:
             return MS_phaseCalc(solarMass, temperature, luminosity);
@@ -60,18 +60,18 @@ export function NMS_phaseCalc(solarMass: number, temperature: number, luminosity
  * @param {number} solarMass
  * @param {number} temperature
  * @param {number} luminosity
- * @return {BlueGiant | GType | RedDwarf | null}
+ * @return {BlueGiant | YellowGiant | RedDwarf | null}
  * @constructor
  */
 export function MS_phaseCalc(solarMass: number, temperature: number, luminosity: number):
-    phaseObjects.BlueGiant | phaseObjects.GType | phaseObjects.RedDwarf | null {
+    phaseObjects.BlueGiant | phaseObjects.YellowGiant | phaseObjects.RedDwarf | null {
     if (solarMass >= 0.08 && solarMass < 1.2) {
         if (temperature >= 2500 && temperature <= 3500 && luminosity < 0.1) {
             return new phaseObjects.RedDwarf();
         }
-    } else if (solarMass >= 1.2 && solarMass <= 2.1) {
+    } else if (solarMass >= 1 && solarMass <= 2.1) {
         if (temperature >= 5000 && temperature <= 6000 && luminosity >= 0.1 && luminosity <= 10) {
-            return new phaseObjects.GType();
+            return new phaseObjects.YellowGiant();
         }
     } else if (solarMass > 2.1 && solarMass <= 20) {
         if (temperature >= 15000 && temperature <= 30000 && luminosity > 10) {

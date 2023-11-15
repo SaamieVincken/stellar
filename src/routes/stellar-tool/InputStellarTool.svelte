@@ -20,9 +20,10 @@
 
 <script>
     import {setStar} from "./SetStar.js";
+
     let _mass = '';
-    let _luminosity = ''
-    let _temperature = ''
+    let _luminosity = '';
+    let _temperature = '';
 
     function editText(field, fieldValue) {
         if (field === "mass") {
@@ -32,8 +33,10 @@
         } else if (field === "temperature") {
             _temperature = fieldValue;
         }
-    }
-    setStar(_mass, _luminosity, _temperature);
+        if(_mass && _luminosity && _temperature){
+            setStar(_mass, _luminosity, _temperature);
+        }
+   }
 </script>
 
 <div class="flex flex-col ml-20 mt-7 bg-white">
@@ -43,8 +46,8 @@
         placeholder={"Input mass (M☉)"}
         bind:value={_mass}
         on:input={(e) => {
-        editText("mass", e.target.value);
-    }}
+            editText("mass", e.target.value);
+        }}
         title="1 solar mass = 1.9891 × 10^30 kilograms"
     />
 
@@ -54,8 +57,8 @@
         placeholder="Input luminosity (L☉)"
         bind:value={_luminosity}
         on:input={(e) => {
-        editText("luminosity", e.target.value);
-    }}
+            editText("luminosity", e.target.value);
+        }}
         title="1 solar luminosity = 3.828 × 10e26 watts"
     />
 
@@ -65,11 +68,8 @@
         placeholder="Input temperature (K)"
         bind:value={_temperature}
         on:input={(e) => {
-        editText("temperature", e.target.value);
-    }}
+            editText("temperature", e.target.value);
+        }}
         title="Kelvin"
     />
-
 </div>
-
-

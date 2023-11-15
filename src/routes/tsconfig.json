@@ -3,7 +3,7 @@
     "module": "commonjs",
     "target": "es5",
     "sourceMap": true,
-    "allowImportingTsExtensions": true
+//    "allowImportingTsExtensions": true
   },
   "exclude": [
     "node_modules"

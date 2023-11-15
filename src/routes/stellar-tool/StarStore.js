@@ -1,5 +1,8 @@
 import { writable } from 'svelte/store';
-import "$lib/shared/StarClass.ts";
-import {Star} from "$lib/shared/StarClass.ts";
 
-export const star = writable(Star || null);
+export const star = writable( undefined );
+export const phase = writable(undefined);
+phase.subscribe(value => {
+    console.log('Value of star store changed:', value);
+});
+

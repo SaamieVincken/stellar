@@ -11,8 +11,7 @@ import { Sequences } from "./SequenceEnum";
 export function sequenceCalc(luminosity: number, mass: number, temperature: number): string {
     let sequence;
     if (luminosity > 0.1 && luminosity <= 10 &&
-        mass < 20 &&
-        temperature > 10000) {
+        mass < 20) {
         sequence = Sequences.MainSequence;
     } else {
         sequence = Sequences.OtherSequences;

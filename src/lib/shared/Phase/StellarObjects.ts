@@ -31,8 +31,8 @@ export class RedDwarf {
     img = "/src/lib/images/RedDwarf.png";
 }
 
-export class GType {
-    phase = "G-type (Main Sequence)";
+export class YellowGiant {
+    phase = "Yellow giant (Main Sequence)";
     mass = "Similar to solar mass";
     luminosity = "Similar to solar luminosity";
     temperature = "Around 5,500 to 6,000 K";
