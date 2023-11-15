@@ -34,8 +34,6 @@ export function initializeRedGiant() {
     const geometry = new THREE.SphereGeometry(sphereRadius, 64, 32); // Adjust the parameters as needed
     const material = new THREE.MeshStandardMaterial({
         map: texture,
-        transparent: true,
-        opacity: 0.8,
         side: THREE.DoubleSide,
         roughness: 0.5,
         metalness: 0.5,
