@@ -1,5 +1,5 @@
 <script>
-    import ThreeCube from "./redGiant.svelte";
+    import ThreeCube from "./starModel.svelte";
 </script>
 <svelte:head>
     <title>Stellar tool</title>

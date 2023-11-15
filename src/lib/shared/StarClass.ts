@@ -3,7 +3,6 @@ import {calculateEffectiveTemperature} from "./StellarProperties/EffectiveTemper
 import {calculateStellarDensity} from "./StellarProperties/StellarDensity";
 
 export class Star {
-    sequence: string;
     phase: string;
     solarMass: number;
     solarLuminosity: number;
@@ -13,13 +12,11 @@ export class Star {
     stellarDensity: number;
 
     constructor(
-        sequence: string,
         phase: string,
         solarMass: number,
         solarLuminosity: number,
         surfaceTemperature: number,
     ) {
-        this.sequence = sequence;
         this.phase = phase;
         this.solarMass = solarMass;
         this.solarLuminosity = solarLuminosity;

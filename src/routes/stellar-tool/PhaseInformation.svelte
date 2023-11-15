@@ -1,8 +1,8 @@
 <script>
     import TimeBar from "./TimeBar.svelte";
     import {BlackHole} from "$lib/shared/Phase/StellarObjects.js";
-    import {savedPhase} from "./phaseStore.js";
-    import ThreeCube from '../stellar-models/redGiant.svelte'
+    import {savedPhase} from "./StarStore.js";
+    import ThreeCube from '../stellar-models/starModel.svelte'
     let phase = "Unknown";
 
     savedPhase.subscribe((value) => {

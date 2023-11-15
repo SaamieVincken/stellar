@@ -2,7 +2,7 @@
     import { onMount, onDestroy } from "svelte";
     import { page } from "$app/stores";
 
-    let stringDate = ""; // Initialize with an empty string
+    let stringDate = "";
 
     // Function to update the time
     function updateDateTime() {
@@ -51,14 +51,14 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        z-index: 9999; /* Make sure it has a higher z-index */
-        height: 30px; /* Set a default height */
+        z-index: 9999;
+        height: 30px;
         background-color: #2d3340;
         transition: height 0.4s ease;
     }
 
     #footer.expanded {
-        height: 100vh; /* Change the height when scrolled */
+        height: 100vh;
     }
 </style>
 
