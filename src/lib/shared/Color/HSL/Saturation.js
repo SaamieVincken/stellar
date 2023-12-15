@@ -3,7 +3,7 @@
  * @param {number} temperature in Kelvin (K)
  * @return {number} Saturation in percentage
  */
-export function calculateSaturation(temperature: number): number {
+export function calculateSaturation(temperature) {
     if (temperature > 30.000){
         return 100; // brightest (in scale)
     } else if(temperature > 10.000 && temperature < 30.000){

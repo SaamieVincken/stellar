@@ -11,10 +11,10 @@ const K = 1.5e10;
  * @return {number}
  */
 export function calculateMainSequenceLifetime(
-    stellarMass: number,
-    stellarTemperature: number,
-    stellarLuminosity: number
-): number {
+    stellarMass,
+    stellarTemperature,
+    stellarLuminosity
+) {
     let mainSequenceLifetime = 0;
     if (stellarMass != null || stellarTemperature != null || stellarLuminosity != null){
         if (stellarMass != null && stellarTemperature != null && stellarLuminosity != null) {

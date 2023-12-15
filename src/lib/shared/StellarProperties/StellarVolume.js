@@ -8,6 +8,6 @@ const pi :number = Math.PI;
  * @param {number} radius in meters (m)
  * @return {number} in cubic meters (m³)
  */
-function calculateSphereVolume(radius: number): number {
+function calculateSphereVolume(radius) {
     return (4 / 3) * pi * Math.pow(radius, 3);
 }

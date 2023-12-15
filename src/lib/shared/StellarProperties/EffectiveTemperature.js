@@ -2,7 +2,7 @@
  * @type {number} Stefan-Boltzmann constant in W/m²·K⁴
  * @type {number} pi
  */
-const stefanBoltzmannConstant: number = 5.67e-8;
+const stefanBoltzmannConstant = 5.67e-8;
 const pi = Math.PI;
 
 /**
@@ -11,7 +11,7 @@ const pi = Math.PI;
  * @param {number} radius in meters (m)
  * @return {number} in Kelvin (K)
  */
-export function calculateEffectiveTemperature(luminosity: number, radius: number): number {
+export function calculateEffectiveTemperature(luminosity, radius){
     return Math.pow((luminosity / (4 * pi * Math.pow(radius, 2) * stefanBoltzmannConstant)), 0.25);
 }
 

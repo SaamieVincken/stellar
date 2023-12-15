@@ -1,6 +1,6 @@
-import {spectralTypeToHSL} from "$lib/shared/Color/HSL/GenerateHSL";
-import {CalculateWavelength} from "$lib/shared/Color/WavelenghtCalc";
-import {HSLtoRGB} from "$lib/shared/Color/HSL/HSLtoRGB";
+import {spectralTypeToHSL} from "$lib/shared/Color/HSL/GenerateHSL.js";
+import {CalculateWavelength} from "$lib/shared/Color/WavelenghtCalc.js";
+import {HSLtoRGB} from "$lib/shared/Color/HSL/HSLtoRGB.js";
 
 /**
  *
@@ -10,7 +10,7 @@ import {HSLtoRGB} from "$lib/shared/Color/HSL/HSLtoRGB";
  * @return {number[]} RGB color value
  * @constructor
  */
-export function GetColor(mass: number, luminosity: number, temperature: number){
+export function GetColor(mass, luminosity, temperature){
     let wavelength = CalculateWavelength(temperature);
     let hsl = spectralTypeToHSL(luminosity, wavelength, temperature);
     return HSLtoRGB(hsl);

@@ -19,7 +19,7 @@
 </style>
 
 <script>
-    import {setStar} from "./SetStar.js";
+    import {setStar} from "$lib/shared/SetStar.js";
 
     let _mass = '';
     let _luminosity = '';

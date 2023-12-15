@@ -3,13 +3,13 @@ const gravitationalConstant = 6.674e-11; // Gravitational constant in m^3/kg/s^2
 const secondsInAYear = 3.154e7;
 
 //This is to calculate the lifetime of stars in non- main sequence phases:
-export function calculateLifetime(luminosity: number, temperature: number, solarMass: number): {
-    superNova: number;
-    whiteDwarf: number;
-    protoStar: number;
-    blackHole: number;
-    redGiant: number;
-    neutronStar: number;
+export function calculateLifetime(luminosity, temperature, solarMass): {
+    superNova;
+    whiteDwarf;
+    protoStar;
+    blackHole;
+    redGiant;
+    neutronStar;
 } {
     // Other equation for age: RotationRate .pow-2
     // o = 5.67 * 10 pow-8

@@ -1,46 +1,52 @@
-<!--<script>-->
-<!--    import TimeBar from "./TimeBar.svelte";-->
-<!--    import {BlackHole} from "$lib/shared/Phase/StellarObjects.js";-->
-<!--    import {savedPhase} from "./StarStore.js";-->
-<!--    import ThreeCube from '../stellar-models/starModel.svelte'-->
-<!--    let phase = "Unknown";-->
+<script>
+    import TimeBar from "./TimeBar.svelte";
+    //import { BlackHole } from "$lib/shared/Phase/StellarObjects.js";
+    import StarModel from "../stellar-models/StarModel.svelte";
+    import { onMount, onDestroy } from 'svelte';
+    import * as THREE from "three";
+    import {initializeStar} from "$lib/shared/StarModel.js";
+    import { star } from '$lib/shared/StarStore.js';
 
-<!--    savedPhase.subscribe((value) => {-->
-<!--        phase = value;-->
-<!--    });-->
-<!--</script>-->
+    let phase = "Unknown";
+    let starData = {};
 
-<!--<div class="fixed flex items-center justify-center w-full">-->
-<!--    <div class="-mt-52">-->
-<!--        {#if phase.img !== undefined}-->
-<!--            <ThreeCube/>-->
-<!--        {:else}-->
-<!--           &lt;!&ndash;- <img src="src/lib/images/StellarNebula.png" alt="StellarNebula" class="w-1/4 h-1/4 mx-auto" style="margin-top: 20px;">&ndash;&gt;-->
-<!--            <ThreeCube/>-->
-<!--        {/if}-->
-<!--    </div>-->
-<!--</div>-->
+    const unsubscribe = star.subscribe(value => {
+        starData = value;
+    });
 
-<!--<div>-->
-<!--    <TimeBar/>-->
-<!--</div>-->
+    onMount(() => {
+        initializeStar(new THREE.Color(0xD8BFD8), 1.6, 1);
+    });
 
-<!--<div class="fixed flex items-center justify-center w-full">-->
-<!--    <div class="mt-80 w-1/2 text-white">-->
-<!--        {#if phase.phase !== undefined}-->
-<!--            {#if phase instanceof BlackHole}-->
-<!--                <h2 class="font-bold">{phase.phase}</h2>-->
-<!--                <p>{phase.mass}</p>-->
-<!--            {:else}-->
-<!--                <h2 class="font-bold">{phase.phase}</h2>-->
-<!--                <p>{phase.luminosity}</p>-->
-<!--                <p>{phase.mass}</p>-->
-<!--                <p>{phase.temperature}</p>-->
-<!--                <p>{phase.phaseDuration}</p>-->
-<!--                <p>{phase.diameter}</p>-->
-<!--            {/if}-->
-<!--        {/if}-->
-<!--    </div>-->
-<!--</div>-->
+    onDestroy(() => {
+        unsubscribe();
+    });
+</script>
 
+<div class="fixed flex items-center justify-center w-full">
+    <div class="-mt-52">
+            <StarModel/>
+    </div>
+</div>
 
+<div>
+    <TimeBar/>
+</div>
+
+<div class="fixed flex items-center justify-center w-full">
+    <div class="mt-80 w-1/2 text-white">
+        {#if phase.phase !== undefined}
+            <!--{#if isBlackHole}-->
+            <!--    <h2 class="font-bold">{phase.phase}</h2>-->
+            <!--    <p>{phase.mass}</p>-->
+            <!--{:else}-->
+            <!--    <h2 class="font-bold">{phase.phase}</h2>-->
+            <!--    <p>{phase.luminosity}</p>-->
+            <!--    <p>{phase.mass}</p>-->
+            <!--    <p>{phase.temperature}</p>-->
+            <!--    <p>{phase.phaseDuration}</p>-->
+            <!--    <p>{phase.diameter}</p>-->
+            <!--{/if}-->
+        {/if}
+    </div>
+</div>

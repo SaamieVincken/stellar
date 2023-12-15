@@ -4,7 +4,6 @@
 
     let stringDate = "";
 
-    // Function to update the time
     function updateDateTime() {
         const Today = new Date();
         stringDate = Today.toLocaleDateString("en-US", {
@@ -17,10 +16,8 @@
         });
     }
 
-    // Call the function initially
     updateDateTime();
 
-    // Update the time every second (you can adjust the interval)
     const interval = setInterval(updateDateTime, 1000);
 
     onMount(() => {
@@ -28,7 +25,6 @@
     });
 
     onDestroy(() => {
-        // Clear the interval when the component is destroyed to prevent memory leaks
         clearInterval(interval);
     });
 

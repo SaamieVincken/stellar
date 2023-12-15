@@ -1,5 +1,5 @@
 <script>
-    import ThreeCube from "./starModel.svelte";
+    import StarModel from "./StarModel.svelte";
 </script>
 <svelte:head>
     <title>Stellar tool</title>
@@ -9,6 +9,6 @@
 
 <div class="fixed flex items-center justify-center w-full">
     <div class="-mt-52">
-        <ThreeCube />
+        <StarModel />
     </div>
 </div>

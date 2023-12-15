@@ -5,6 +5,6 @@ import {getLuminosityClass} from "../../SpectralClassification/LuminosityClass/L
  * @param {number} luminosity
  * @return {number} in lightness percentage (0%-100%)
  */
-export function luminosityClassToLightness(luminosity: number): number{
+export function luminosityClassToLightness(luminosity){
     return getLuminosityClass(luminosity);
 }

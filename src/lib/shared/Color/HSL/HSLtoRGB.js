@@ -4,7 +4,7 @@
  * @return {number[]} rgb
  * @constructor
  */
-export function HSLtoRGB(hsl: number[]): number[] {
+export function HSLtoRGB(hsl) {
     const [h, s, l] = hsl;
     const c = (1 - Math.abs(2 * l - 1)) * s;
     const x = c * (1 - Math.abs(((h / 60) % 2) - 1));

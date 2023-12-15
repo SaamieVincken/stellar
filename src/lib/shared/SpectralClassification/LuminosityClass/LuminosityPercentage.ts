@@ -1,7 +1,7 @@
 /**
  * Luminosity classes and their percentages for lightness in HSL
  */
-export const LuminosityClassPercentage: { [key: string]: number } = {
+export const LuminosityClassPercentage: { [key: string] : number } = {
     Ia_O: 95,
     Ia: 90,
     Ib: 30,

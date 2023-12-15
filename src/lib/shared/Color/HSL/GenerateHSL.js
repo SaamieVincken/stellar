@@ -1,6 +1,6 @@
-import {luminosityClassToLightness} from "./Lightness";
-import {wavelengthToHue} from "./Hue";
-import {calculateSaturation} from "./Saturation";
+import {luminosityClassToLightness} from "./Lightness.js";
+import {wavelengthToHue} from "./Hue.js";
+import {calculateSaturation} from "./Saturation.js";
 
 /**
  * Define the HSL color based on the spectral type properties
@@ -9,10 +9,10 @@ import {calculateSaturation} from "./Saturation";
  * @param {number} temperature in kelvin (K)
  * @return {number[]} in HSL scale [H, S, L]
  */
-export function spectralTypeToHSL(luminosity: number, wavelength: number, temperature: number): number[] {
-    const hue: number = wavelengthToHue(wavelength);
-    const saturation: number = calculateSaturation(temperature);
-    let lightness: number = luminosityClassToLightness(luminosity);
+export function spectralTypeToHSL(luminosity, wavelength, temperature){
+    const hue = wavelengthToHue(wavelength);
+    const saturation = calculateSaturation(temperature);
+    let lightness = luminosityClassToLightness(luminosity);
 
     if(hue && saturation && lightness ){
         /**

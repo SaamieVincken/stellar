@@ -3,7 +3,7 @@
  * @param {number} solarMass
  * @return {number}
  */
-export function calculateLuminosity(solarMass: number): number {
+export function calculateLuminosity(solarMass) {
     return Math.pow(solarMass, 3.5);
 }
 
@@ -12,6 +12,6 @@ export function calculateLuminosity(solarMass: number): number {
  * @param {number} solarLuminosity
  * @return {number}
  */
-export function calculateMass(solarLuminosity: number): number {
+export function calculateMass(solarLuminosity) {
     return Math.pow(solarLuminosity, 1 / 3.5);
 }

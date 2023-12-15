@@ -2,7 +2,7 @@
  * Constant for the mass of our sun
  * @type {number} in kilograms (kg)
  */
-const sunMass: number = 1.989e30;
+const sunMass = 1.989e30;
 
 /**
  * Converts a mass value to solar mass
@@ -10,7 +10,7 @@ const sunMass: number = 1.989e30;
  * @param {number} mass in kilograms (kg)
  * @returns {number} in solar masses (M☉)
  */
-export function convertMassToSolarMass(mass: number): number {
+export function convertMassToSolarMass(mass) {
     return mass / sunMass;
 }
 
@@ -20,7 +20,7 @@ export function convertMassToSolarMass(mass: number): number {
  * @param {number} solarMass in solar masses (M☉)
  * @returns {number} in kilograms (kg)
  */
-export function convertSolarMassToKilograms(solarMass: number): number {
+export function convertSolarMassToKilograms(solarMass) {
     return solarMass * sunMass;
 }
 
@@ -30,7 +30,7 @@ export function convertSolarMassToKilograms(solarMass: number): number {
  * @param {number} solarMass in solar masses (M☉)
  * @returns {number} in grams (g)
  */
-export function convertSolarMassToGrams(solarMass: number): number {
+export function convertSolarMassToGrams(solarMass) {
     const gramsPerKilogram = 1000;
     return convertSolarMassToKilograms(solarMass) * gramsPerKilogram;
 }

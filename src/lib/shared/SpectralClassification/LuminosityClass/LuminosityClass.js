@@ -1,11 +1,11 @@
-import { LuminosityClassPercentage } from "./LuminosityPercentage";
+import { LuminosityClassPercentage } from "./LuminosityPercentage.ts";
 
 /**
  * Define the luminosity class of a star based on its luminosity
  * @param {number} luminosity in solar Luminosity (L☉)
  * @return {number | undefined} as percentage for luminosity and lightness
  */
-export function getLuminosityClass(luminosity: number): number{
+export function getLuminosityClass(luminosity){
     if (luminosity >= 1e5) {
         return LuminosityClassPercentage.Ia_O;
     } else if (luminosity >= 10000 && luminosity <= 1e5) {
