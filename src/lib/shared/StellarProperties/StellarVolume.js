@@ -1,13 +1,15 @@
-/**
- * @type {number} pi
- */
-const pi :number = Math.PI;
+import Decimal from 'decimal.js';
+
+// Pi constant
+const pi = new Decimal(Math.PI);
 
 /**
- * Calculate the volume using V=(4/3)πR^3
- * @param {number} radius in meters (m)
- * @return {number} in cubic meters (m³)
+ * Calculate the volume using V = (4/3)πR^3
+ * @param {Decimal} radius in meters (m)
+ * @return {Decimal} in cubic meters (m³)
  */
-function calculateSphereVolume(radius) {
-    return (4 / 3) * pi * Math.pow(radius, 3);
+export function calculateVolume(radius) {
+    radius = new Decimal(radius);
+    const fourThirds = new Decimal(4) / 3;
+    return fourThirds * pi * radius.pow(3);
 }

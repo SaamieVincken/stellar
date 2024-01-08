@@ -1,17 +1,21 @@
+import Decimal from 'decimal.js';
+
 /**
  * Calculate the luminosity using solar Mass (M☉)
- * @param {number} solarMass
- * @return {number}
+ * @param {Decimal} solarMass
+ * @return {Decimal}
  */
 export function calculateLuminosity(solarMass) {
-    return Math.pow(solarMass, 3.5);
+    solarMass = new Decimal(solarMass);
+    return Decimal.pow(solarMass, 3.5);
 }
 
 /**
  * Calculate the mass using solar Luminosity(L☉)
- * @param {number} solarLuminosity
- * @return {number}
+ * @param {Decimal} solarLuminosity
+ * @return {Decimal}
  */
 export function calculateMass(solarLuminosity) {
-    return Math.pow(solarLuminosity, 1 / 3.5);
+    solarLuminosity = new Decimal(solarLuminosity);
+    return Decimal.pow(solarLuminosity, Decimal.div(1, 3.5));
 }
