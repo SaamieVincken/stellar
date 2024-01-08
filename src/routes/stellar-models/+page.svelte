@@ -1,5 +1,5 @@
 <script>
-    import StarModel from "./StarModel.svelte";
+    import StarModel from "../stellar-tool/Models/StarModel.svelte";
 </script>
 <svelte:head>
     <title>Stellar tool</title>
