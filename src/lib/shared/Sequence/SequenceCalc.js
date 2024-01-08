@@ -10,8 +10,7 @@ import { Sequences } from "./SequenceEnum.ts";
  */
 export function sequenceCalc(luminosity, mass, temperature){
     let sequence;
-    if (luminosity > 0.1 && luminosity <= 10 &&
-        mass < 20) {
+    if (mass >= 0.08 && mass < 20 && temperature <= 30000 && temperature >= 2500) {
         sequence = Sequences.MainSequence;
     } else {
         sequence = Sequences.OtherSequences;
