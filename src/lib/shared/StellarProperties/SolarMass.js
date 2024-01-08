@@ -1,36 +1,37 @@
-/**
- * Constant for the mass of our sun
- * @type {number} in kilograms (kg)
- */
-const sunMass = 1.989e30;
+import Decimal from 'decimal.js';
+
+// Constant for the mass of our sun in kilograms (kg)
+const sunMass = new Decimal('1.989e30');
 
 /**
  * Converts a mass value to solar mass
  *
- * @param {number} mass in kilograms (kg)
- * @returns {number} in solar masses (M☉)
+ * @param {Decimal} mass in kilograms (kg)
+ * @returns {Decimal} in solar masses (M☉)
  */
 export function convertMassToSolarMass(mass) {
-    return mass / sunMass;
+    mass = new Decimal(mass);
+    return mass.div(sunMass);
 }
 
 /**
  * Converts a mass value to kilograms (kg) from solar masses (M☉)
  *
- * @param {number} solarMass in solar masses (M☉)
- * @returns {number} in kilograms (kg)
+ * @param {Decimal} solarMass in solar masses (M☉)
+ * @returns {Decimal} in kilograms (kg)
  */
 export function convertSolarMassToKilograms(solarMass) {
-    return solarMass * sunMass;
+    solarMass = new Decimal(solarMass);
+    return solarMass.mul(sunMass);
 }
 
 /**
  * Converts a mass value to grams (g) from solar masses (M☉)
  *
  * @param {number} solarMass in solar masses (M☉)
- * @returns {number} in grams (g)
+ * @returns {Decimal} in grams (g)
  */
 export function convertSolarMassToGrams(solarMass) {
-    const gramsPerKilogram = 1000;
-    return convertSolarMassToKilograms(solarMass) * gramsPerKilogram;
+    const gramsPerKilogram = new Decimal(1000);
+    return convertSolarMassToKilograms(solarMass).mul(gramsPerKilogram);
 }
