@@ -28,7 +28,7 @@ export function GetPhases(luminosity, solarMass, temperature ) {
  * @constructor
  */
 export function NMS_phaseCalc(solarMass, temperature, luminosity) {
-    if (solarMass < 2 && solarMass > 0.08) {
+    if (solarMass < 2 && solarMass > 0) {
         if (luminosity <= 0.01 && temperature < 500) {
             return PhasesEnum.ProtoStar;
         } else if (luminosity <= 0.1 && temperature > 5000) {
@@ -49,7 +49,7 @@ export function NMS_phaseCalc(solarMass, temperature, luminosity) {
             return PhasesEnum.Supernova;
         }
     }
-    return null;
+    return PhasesEnum.Unknown;
 }
 
 /**
@@ -62,13 +62,13 @@ export function NMS_phaseCalc(solarMass, temperature, luminosity) {
  */
 export function MS_phaseCalc(solarMass, temperature, luminosity){
     if (solarMass >= 0.08 && solarMass < 1.2 && temperature >= 2500 && temperature <= 3500 && luminosity < 0.1) {
-            return PhasesEnum.RedDwarf;
+        return PhasesEnum.RedDwarf;
     } else if (solarMass >= 1 && solarMass <= 2.1 && temperature >= 5000 && temperature <= 7000 && luminosity >= 0.1 && luminosity <= 10) {
-            return PhasesEnum.YellowGiant;
+        return PhasesEnum.YellowDwarf;
     } else if (solarMass > 2.1 && solarMass <= 20 && temperature >= 15000 && temperature <= 30000 && luminosity > 10) {
-            return PhasesEnum.BlueGiant;
+        return PhasesEnum.BlueGiant;
     }
-    return null;
+    return PhasesEnum.Unknown;
 }
 
 
