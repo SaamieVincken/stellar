@@ -1,21 +1,26 @@
 <style>
+    .input-stellar-tool {
+        position: relative;
+        z-index: 1000;
+    }
+
     .input-style {
-        border: 2px solid #e8e8e8;
+        border: 1px solid #000d21;
         padding: 5px;
         font-size: small;
         text-align: center;
-        color: #5d5d6a;
         width: 150px;
         margin: 5px;
         caret-color: black;
+        background-color: #121212;
+        color: white;
     }
 
     .input-style:focus {
         outline: none;
-        background-color: #eff0f1;
-        color: #5d5d6a;
+        background-color: #3F3F3F;
+        color: white;
     }
-
 </style>
 
 <script>
@@ -36,14 +41,14 @@
         if(_mass && _luminosity && _temperature){
             setStar(_mass, _luminosity, _temperature);
         }
-   }
+    }
 </script>
 
-<div class="flex flex-col ml-20 mt-7 bg-white">
+<div class="flex flex-col ml-20 mt-7 input-stellar-tool">
     <input
         class="input-style"
         type="text"
-        placeholder={"Input mass (M☉)"}
+        placeholder="Input mass (M☉)"
         bind:value={_mass}
         on:input={(e) => {
             editText("mass", e.target.value);
