@@ -47,9 +47,8 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        z-index: 9999;
-        height: 30px;
-        background-color: #2d3340;
+        height: 40px;
+        background-color: #121212;
         transition: height 0.4s ease;
     }
 
@@ -70,13 +69,13 @@
             <li
                 class:active={$page.url.pathname === "./stellar-tool"}
                 class="mr-2 w-36 text-center text-white"
-                style="background-color: #586278;">
+                style="background-color: #3F3F3F;">
                 <a href="./stellar-tool">Stellar tool</a>
             </li>
             <li
                 class:active={$page.url.pathname === "/stellar-models"}
-                class="mr-2 bg-gray-400 w-36 text-center text-white"
-                style="background-color: #586278;">
+                class="mr-2  w-36 text-center text-white"
+                style="background-color: #3F3F3F;">
 
                 <a href="./stellar-models">Model test</a>
             </li>

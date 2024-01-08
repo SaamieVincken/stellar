@@ -12,7 +12,7 @@
 					<a href="/">Stellar tool</a>
 				</li>
 				<li class:active={$page.url.pathname === '/redGiant'} class="mr-3 bg-gray-400 w-36 text-center text-white" style="background-color: #586278;">
-					<a href="stellar-models/StarModel.svelte">Star database</a>
+					<a href="stellar-tool/Models/StarModel.svelte">Star database</a>
 				</li>
 			</ul>
 		</div>
