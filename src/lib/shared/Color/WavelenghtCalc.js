@@ -1,15 +1,15 @@
-/**
- * Wiens constant
- * @type {number} in meters per Kelvin
- */
-const WiensConstant = 2.898 * Math.pow(10, -3);
+import Decimal from 'decimal.js';
+
+// Wiens constant in meters per Kelvin
+const WiensConstant = new Decimal('2.898e-3'); // 2.898 * 10^-3
 
 /**
- * Calculate wave length using Wien's displacement law λ_peak=b/T
- * @param {number} surfaceTemperature in Kelvin
- * @return {number} peak wavelength in nanometers
+ * Calculate wavelength using Wien's displacement law λ_peak = b/T
+ * @param {Decimal} surfaceTemperature in Kelvin
+ * @return {Decimal} peak wavelength in nanometers
  */
 export function CalculateWavelength(surfaceTemperature) {
-    let wavelengthInMeters = WiensConstant / surfaceTemperature;
-    return wavelengthInMeters * 1e9; // Convert to nanometers
+    surfaceTemperature = new Decimal(surfaceTemperature);
+    let wavelengthInMeters = WiensConstant.div(surfaceTemperature);
+    return  wavelengthInMeters.mul(1e9); // Convert to nanometers
 }
