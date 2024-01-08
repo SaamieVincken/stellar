@@ -3,7 +3,9 @@ import {calculateEffectiveTemperature} from "./StellarProperties/EffectiveTemper
 import {calculateStellarDensity} from "./StellarProperties/StellarDensity.js";
 import {calculateSpectralType} from "$lib/shared/SpectralClassification/SpectralType/SpectralType.js";
 import {getLuminosityClass} from "$lib/shared/SpectralClassification/LuminosityClass/LuminosityClass.js";
+import {calculateVolume} from "$lib/shared/StellarProperties/StellarVolume.js";
 import {GetColor} from "$lib/shared/Color/Color.js";
+import Decimal from "decimal.js";
 
 export class Star {
     phase;
@@ -15,7 +17,8 @@ export class Star {
     stellarDensity;
     spectralType;
     luminosityClass;
-    rgbColor;
+    hslColor;
+    stellarVolume;
 
     constructor(
         phase,
@@ -27,12 +30,13 @@ export class Star {
         this.solarMass = solarMass;
         this.solarLuminosity = solarLuminosity;
         this.surfaceTemperature = surfaceTemperature;
-        this.stellarRadius = calculateStellarRadius(solarLuminosity, surfaceTemperature);
-        this.effectiveTemperature = calculateEffectiveTemperature(solarLuminosity, this.stellarRadius);
-        this.stellarDensity = calculateStellarDensity(solarMass, this.stellarRadius);
+        this.stellarRadius = calculateStellarRadius(new Decimal(solarLuminosity), new Decimal(surfaceTemperature)).toNumber();
+        this.effectiveTemperature = calculateEffectiveTemperature(solarLuminosity, this.stellarRadius).toNumber();
+        this.stellarDensity = calculateStellarDensity(new Decimal(solarMass), calculateVolume(this.stellarRadius));
         this.spectralType = calculateSpectralType(this.effectiveTemperature);
         this.luminosityClass = getLuminosityClass(this.solarLuminosity);
-        this.rgbColor = GetColor(this.solarMass, this.solarLuminosity, this.surfaceTemperature)
+        this.hslColor = GetColor(this.solarMass, this.solarLuminosity, this.surfaceTemperature);
+        this.stellarVolume = calculateVolume(this.stellarRadius);
     }
 }
 
