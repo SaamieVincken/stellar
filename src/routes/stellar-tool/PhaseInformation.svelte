@@ -9,6 +9,31 @@
     .custom-border{
         border: #000d21;
     }
+    .tooltip {
+        position: relative;
+
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        background-color: white;
+        color: black;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 100;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
 
     .supernova-color {
         color: #201d82;
@@ -34,21 +59,34 @@
     import Supernova from "./Models/Supernova.svelte";
     import BlackHole from "./Models/BlackHole.svelte";
     import Nebula from "./Models/Nebula.svelte";
+    import PlayButton from "./PlayButton.svelte";
+    import ShowAll from "./Models/ShowAll.svelte";
+
+    let showAllActive = false;
+
+    function handlePlayButtonClick() {
+        showAllActive = !showAllActive;
+    }
+
     import {
         LuminosityClassPercentage
     } from "$lib/shared/SpectralClassification/LuminosityClass/LuminosityPercentage";
+    import Lightning from "./Models/Lightning.svelte";
+    import NeutronStar from "./Models/NeutronStar.svelte";
+    import ExplodingSphere from "./Models/ExplodingSphere.svelte";
+
     let luminosityClassKey;
     let starData = {};
+    let previousStar = "";
     $: if ($star) {
-        console.log("Reactive $star update:", $star);
         luminosityClassKey = getKeyByValue(LuminosityClassPercentage, starData.luminosityClass);
         starData = $star;
-
     }
     function getKeyByValue(object, value) {
         return Object.keys(object).find(key => object[key] === value);
     }
 </script>
+
 <div class="fixed flex items-center justify-center w-full">
     <div class="-mt-52" style="position: relative;">
         {#if starData.phase !== undefined}
@@ -58,6 +96,8 @@
                 <BlackHole/>
             {:else if starData.phase === "Unknown"}
                 <Nebula/>
+            {:else if starData.phase === "Neutron Star"}
+                <NeutronStar/>
             {:else}
                 <StarModel/>
             {/if}
@@ -68,10 +108,17 @@
 </div>
 
 
-<div>
-    <TimeBar/>
+
+    <!-- Add PlayButton-->
+
+<!--    <PlayButton on:click={handlePlayButtonClick} />-->
+
+<!--    &lt;!&ndash; Include the ShowAll component and pass the activation state &ndash;&gt;-->
+<!--    <ShowAll activate={showAllActive} />-->
+
+<!--    <TimeBar/>-->
     <div class="fixed flex items-center justify-center w-full">
-        <div class="mt-extraTitle w-1/2 text-white">
+        <div class="mt-extraTitle w-1/2 text-white hover:text-blue-500">
             {#if starData.phase !== undefined}
                 {#if starData.phase !== "Black Hole" }
                     <h1 class="ml-1 text-2xl md:text-3xl font-semibold tracking-tight font-mono
@@ -83,7 +130,7 @@
                         {starData.phase}
                     </h1>
                     {:else}
-                    <h1 class="ml-1 text-2xl md:text-3xl font-semibold tracking-tight font-sans text-red-800">
+                    <h1 class="ml-1 text-2xl md:text-3xl font-semibold tracking-tight font-sans text-red-800 ">
                         {starData.phase}
                     </h1>
                 {/if}
@@ -92,45 +139,65 @@
         </div>
     </div>
 
-    <div class="fixed flex items-center justify-center w-full">
-        <div class="mt-extra w-1/2 text-white bg-black border-2 custom-border font-mono">
-            {#if starData.phase !== undefined}
-                {#if starData.phase !== "Black Hole" }
-                    <div class="flex justify-between">
-                        <div>
-                            <p class="ml-1">solar masses: {starData.solarMass} M☉</p>
-                            <p class="ml-1">luminosity: {starData.solarLuminosity} L☉</p>
-                            <p class="ml-1">temperature: {starData.surfaceTemperature} Kelvin</p>
+<div class="fixed flex items-center justify-center w-full">
+    <div class={starData.phase === "Black Hole" ? 'mt-extra text-white bg-black border-2 custom-border font-mono w-1/6' : 'mt-extra text-white bg-black border-2 custom-border font-mono w-1/2'} style={starData.phase === "Black Hole" ? 'margin-right:500px;' : ''}>
+        {#if starData.phase !== undefined}
+            {#if starData.phase !== "Black Hole" }
+                <div class="flex justify-between">
+                    <div>
+                        <div class="tooltip">
+                        <p class="ml-1 hover:text-blue-500">solar masses: {starData.solarMass} M☉</p>
+                            <span class="tooltiptext" style="width: 430px;">{Number(starData.solarMass).toFixed(2)} times the mass of our sun</span>
                         </div>
-                            <div>
-                            <p class="ml-1">radius: {Math.round(starData.stellarRadius / 1000).toLocaleString('de-DE')} km</p>
-                            <p class="ml-1">density: {starData.stellarDensity.toExponential(2)} g/cm³</p>
-                            <p class="ml-1 mb-2">volume: {Number(starData.stellarVolume).toExponential(2)} m³</p>
+                        <div class="tooltip">
+                        <p class="ml-1 hover:text-blue-500">luminosity: {starData.solarLuminosity} L☉</p>
+                        <span class="tooltiptext" style="width: 430px;">{Number(starData.solarLuminosity).toFixed(2)} times the luminosity of our sun</span>
+                        </div>
+                        <div class="tooltip">
+                            <p class="ml-1 hover:text-blue-500">temperature: {starData.surfaceTemperature} Kelvin</p>
+                            <span class="tooltiptext" style="width: 480px;">
+                                {(starData.surfaceTemperature / 5773).toFixed(2)}
+                                times the Sun's temperature
+                                </span>
+                        </div>
 
+                    </div>
+                    <div>
+                        <div class="tooltip">
+                            <p class="ml-1 hover:text-blue-500">radius: {Math.round(starData.stellarRadius / 1000).toLocaleString('de-DE')} km</p>
+                            <span class="tooltiptext" style="width: 480px;">
+                                {((starData.stellarRadius / 696340)/1000).toFixed(2)}
+                                times the Sun's radius
+                            </span>
                         </div>
-                        <div>
-                            <p class="ml-1 text-blue-500">spectral type: {starData.spectralType}</p>
-                            <p class="ml-1 text-blue-500">luminosity class: {luminosityClassKey}</p>
+
+                        <div class="ml-1 tooltip hover:text-blue-500">
+                            Density: {starData.stellarDensity.toExponential(2)} g/cm³
+                            <span class="tooltiptext" style="width: 480px;">{(starData.stellarDensity / 1.408).toFixed(2)}
+                                times the Sun's density</span>
+                        </div>
+                        <div class="tooltip">
+                        <p class="ml-1 mb-2 hover:text-blue-500">volume: {Number(starData.stellarVolume).toExponential(2)} m³</p>
+                            <span class="tooltiptext" style="width: 480px;">{(starData.stellarVolume / 1.41e27).toFixed(2)}
+                                times the Sun's volume</span>
                         </div>
                     </div>
-                {:else}
-                    <p class="ml-1 mt-2">solar masses: {starData.solarMass} M☉</p>
-                    <p class="ml-1">temperature: {starData.surfaceTemperature} Kelvin</p>
-                {/if}
+                    <div>
+
+                        <p class="ml-1 text-blue-500">spectral type: {starData.spectralType}</p>
+
+
+                        <p class="ml-1 text-blue-500">luminosity class: {luminosityClassKey}</p>
+
+
+
+                    </div>
+                </div>
+            {:else}
+                <p class="ml-1 mt-2">solar masses: {starData.solarMass} M☉</p>
+                <p class="ml-1">temperature: {starData.surfaceTemperature} Kelvin</p>
             {/if}
-        </div>
+        {/if}
     </div>
 </div>
-
-<!--    phase;
-    solarMass;
-    solarLuminosity;
-    surfaceTemperature;
-    effectiveTemperature;
-    stellarRadius;
-    stellarDensity;
-    spectralType;
-    luminosityClass;
-    hslColor;-->
-
 

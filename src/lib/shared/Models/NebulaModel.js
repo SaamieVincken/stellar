@@ -3,6 +3,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { ImprovedNoise } from 'three/examples/jsm/math/ImprovedNoise.js';
 
 let scene, camera, renderer, rendererContainer, mesh;
+let requestID;
+let supernovaTexture;
+let secondTexture;
+
 
 export function initializeNebula() {
     // Scene setup
@@ -27,8 +31,8 @@ export function initializeNebula() {
     } else {
         document.body.appendChild(renderer.domElement);
     }
-    const supernovaTexture = new THREE.TextureLoader().load('src/lib/images/f5db2faf-6b05-4df7-8089-4c6b9da8f19b.webp' );
-    const secondTexture = new THREE.TextureLoader().load('src/lib/images/f5db2faf-6b05-4df7-8089-4c6b9da8f19b.webp');
+    supernovaTexture = new THREE.TextureLoader().load('src/lib/images/f5db2faf-6b05-4df7-8089-4c6b9da8f19b.webp' );
+    secondTexture = new THREE.TextureLoader().load('src/lib/images/f5db2faf-6b05-4df7-8089-4c6b9da8f19b.webp');
 
     // Cloud texture setup
     const size = 128;
@@ -183,7 +187,7 @@ export function initializeNebula() {
         color = linearToSRGB(ac);  // Ensure 'ac.a' is correctly factored into this final color.
     }
 `;
-
+    requestID = requestAnimationFrame(render);
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.RawShaderMaterial({
         glslVersion: THREE.GLSL3,
@@ -221,13 +225,15 @@ export function initializeNebula() {
 }
 
 function render() {
-    requestAnimationFrame(render);
-    mesh.material.uniforms.cameraPos.value.copy(camera.position);
-    mesh.rotation.y = - performance.now() / 15000;
-    mesh.material.uniforms.frame.value++;
-    renderer.setClearColor(0x000000, 0);
-    renderer.clear();
-    renderer.render(scene, camera);
+    if(renderer !== null && renderer !== undefined) {
+        requestAnimationFrame(render);
+        mesh.material.uniforms.cameraPos.value.copy(camera.position);
+        mesh.rotation.y = -performance.now() / 15000;
+        mesh.material.uniforms.frame.value++;
+        renderer.setClearColor(0x000000, 0);
+        renderer.clear();
+        renderer.render(scene, camera);
+    }
 }
 
 
@@ -236,3 +242,63 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
+
+export function disposeSceneNebula() {
+    if(requestID) {
+        cancelAnimationFrame(requestID);
+    }
+
+    if (renderer !== undefined && renderer !== null) {
+        renderer.forceContextLoss();
+        renderer.domElement = null;
+        renderer.dispose();
+        renderer = null;
+
+
+        // Remove event listeners
+        window.removeEventListener('resize', onWindowResize);
+
+        // Dispose of textures
+        if (supernovaTexture) {
+            supernovaTexture.dispose();
+        }
+        if (secondTexture) {
+            secondTexture.dispose();
+        }
+
+
+        if (scene !== null && scene !== undefined && mesh !== null && mesh !== undefined) {
+            if (mesh) {
+                scene.remove(mesh);
+            }
+            // Dispose of any child objects in the scene
+            scene.traverse((object) => {
+                if (object instanceof THREE.Mesh) {
+                    // Dispose of geometry and material
+                    if (object.geometry) {
+                        object.geometry.dispose();
+                    }
+                    if (object.material) {
+                        if (Array.isArray(object.material)) {
+                            object.material.forEach((material) => {
+                                material.dispose();
+                            });
+                        } else {
+                            object.material.dispose();
+                        }
+                    }
+                }
+            });
+
+            // Remove event listeners (e.g., resize)
+            window.removeEventListener('resize', onWindowResize);
+
+            // Set the scene to null
+            scene = null;
+        }
+
+        // Reset camera
+        camera = null;
+    }
+}
+

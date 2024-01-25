@@ -35,7 +35,7 @@ export class Star {
         this.stellarDensity = calculateStellarDensity(new Decimal(solarMass), calculateVolume(this.stellarRadius));
         this.spectralType = calculateSpectralType(this.effectiveTemperature);
         this.luminosityClass = getLuminosityClass(this.solarLuminosity);
-        this.hslColor = GetColor(this.solarMass, this.solarLuminosity, this.surfaceTemperature);
+        this.hslColor = GetColor(this.phase, this.solarLuminosity, this.surfaceTemperature);
         this.stellarVolume = calculateVolume(this.stellarRadius);
     }
 }

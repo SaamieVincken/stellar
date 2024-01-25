@@ -3,6 +3,9 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { ImprovedNoise } from 'three/examples/jsm/math/ImprovedNoise.js';
 
 let scene, camera, renderer, rendererContainer, mesh;
+let requestID;
+let supernovaTexture;
+let secondTexture;
 
 export function initializeSupernova() {
     // Scene setup
@@ -22,8 +25,8 @@ export function initializeSupernova() {
     } else {
         document.body.appendChild(renderer.domElement);
     }
-    const supernovaTexture = new THREE.TextureLoader().load('src/lib/images/nasa-rTZW4f02zY8-unsplash.jpg' );
-    const secondTexture = new THREE.TextureLoader().load('src/lib/images/nasa-rTZW4f02zY8-unsplash.jpg');
+    supernovaTexture = new THREE.TextureLoader().load('src/lib/images/nasa-rTZW4f02zY8-unsplash.jpg' );
+    secondTexture = new THREE.TextureLoader().load('src/lib/images/nasa-rTZW4f02zY8-unsplash.jpg');
 
     // Cloud texture setup
     const size = 120;
@@ -49,6 +52,7 @@ export function initializeSupernova() {
     texture.magFilter = THREE.LinearFilter;
     texture.unpackAlignment = 1;
     texture.needsUpdate = true;
+
 
     // Cloud material setup
     const vertexShader = /* glsl */`
@@ -192,7 +196,7 @@ export function initializeSupernova() {
         fragmentShader,
         side: THREE.BackSide,
     });
-
+    requestID = requestAnimationFrame(render);
     mesh = new THREE.Mesh(geometry, material);
     mesh.position.y = 0.2;
     scene.add(mesh);
@@ -202,20 +206,90 @@ export function initializeSupernova() {
 
     render();
 }
-
 function render() {
-    requestAnimationFrame(render);
-    mesh.material.uniforms.cameraPos.value.copy(camera.position);
-    mesh.rotation.y = - performance.now() / 50000;
-    mesh.material.uniforms.frame.value++;
-    renderer.setClearColor(0x000000, 0);
-    renderer.clear();
-    renderer.render(scene, camera);
+    if(mesh !== null && mesh !== undefined && renderer !== null && renderer !== undefined && camera !== null && camera !== undefined) {
+        requestAnimationFrame(render);
+        mesh.material.uniforms.cameraPos.value.copy(camera.position);
+
+        // Rotating primarily around the right side of the mesh
+        const rotationSpeed = 0.0002; // Adjust rotation speed as needed
+        const rotationOffset = Math.PI / 0.52; // Offset to focus on the right side
+        const rotationRange = 0.15; // Adjust range of rotation as needed
+
+        // Calculate rotation
+        mesh.rotation.y = rotationOffset + Math.sin(performance.now() * rotationSpeed) * rotationRange;
+
+        mesh.material.uniforms.frame.value++;
+        renderer.setClearColor(0x000000, 0);
+        renderer.clear();
+        renderer.render(scene, camera);
+    }
 }
 
 
 function onWindowResize() {
+    if(camera !== null && camera !== undefined){
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    }
 }
+
+export function disposeScene() {
+
+
+    if(camera !== null && scene !== null && renderer !== null && camera !== undefined && scene !== undefined && renderer !== undefined) {
+        // Dispose of the scene's children
+        if(requestID) {
+            cancelAnimationFrame(requestID);
+        }
+        // Remove the renderer's DOM element if it exists
+        if (renderer && renderer.domElement.parentNode) {
+            renderer.domElement.parentNode.removeChild(renderer.domElement);
+        }
+        while (scene && scene.children.length > 0) {
+            let child = scene.children[0];
+            if (child) {
+                // Dispose of geometry if it exists
+                if (child.geometry) {
+                    child.geometry.dispose();
+                }
+
+                // Dispose of materials if they exist (handling arrays of materials)
+                if (child.material) {
+                    if (Array.isArray(child.material)) {
+                        child.material.forEach(material => {
+                            if (material) {
+                                material.dispose();
+                            }
+                        });
+                    } else {
+                        child.material.dispose();
+                    }
+                }
+
+                // Remove the child from the scene
+                scene.remove(child);
+            }
+        }
+
+        // Dispose of textures
+        if (supernovaTexture) {
+            supernovaTexture.dispose();
+        }
+        if (secondTexture) {
+            secondTexture.dispose();
+        }
+
+        // Dispose of the renderer if it exists
+        if (renderer) {
+            renderer.dispose();
+        }
+
+
+        camera = null;
+        scene = null;
+    }
+}
+
+

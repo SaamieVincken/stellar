@@ -2,12 +2,9 @@
   "out": "src/typedoc",
   "name": "Stellar project documentation - Phases and sequences",
   "entryPoints": [
-    "./src/lib/shared/Color/*.ts",
-    "./src/lib/shared/Color/HSL/*.ts",
-    "./src/lib/shared/SpectralClassification/LuminosityClass/*.ts",
-    "./src/lib/shared/SpectralClassification/SpectralType/*.ts"
+    "./src/lib/shared/**/*.ts",
+    "./src/lib/shared/**/*.js"
   ],
-
   "exclude": ["node_modules"]
 }
 

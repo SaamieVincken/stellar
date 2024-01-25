@@ -1,6 +1,7 @@
 import {sequenceCalc} from '../Sequence/SequenceCalc';
 import {Sequences} from '../Sequence/SequenceEnum.ts';
 import {PhasesEnum} from "./PhasesEnum.ts";
+import {BlackHole, BlueGiant, NeutronStar, ProtoStar, RedDwarf, RedGiant, Supernova, WhiteDwarf, YellowGiant } from './StellarObjects.js';
 
 /**
  * Check if a star is in its main sequence or not
@@ -67,6 +68,12 @@ export function MS_phaseCalc(solarMass, temperature, luminosity){
         return PhasesEnum.YellowDwarf;
     } else if (solarMass > 2.1 && solarMass <= 20 && temperature >= 15000 && temperature <= 30000 && luminosity > 10) {
         return PhasesEnum.BlueGiant;
+    }else if (solarMass < 2 && solarMass > 0 &&luminosity <= 0.1 && temperature > 5000) {
+        return PhasesEnum.WhiteDwarf;
+    }else if (solarMass >= 0.5 && solarMass <= 8) {
+        if (temperature < 1e6 && luminosity > 1000) {
+            return PhasesEnum.RedGiant;
+        }
     }
     return PhasesEnum.Unknown;
 }

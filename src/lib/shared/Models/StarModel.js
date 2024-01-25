@@ -4,6 +4,7 @@ let scene, camera, renderer, globe, light, rendererContainer;
 let uniforms;
 
 export function initializeStar() {
+
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
     camera.position.z = 5;
@@ -27,10 +28,10 @@ export function initializeStar() {
     lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
 
     uniforms = {
-        'fogDensity': { value: 0.45 },
+        'fogDensity': { value: 0.85 },
         'fogColor': { value: new THREE.Vector3(0, 0, 0) },
         'time': { value: 1.0 },
-        'uvScale': { value: new THREE.Vector2(3.0, 1.0) },
+        'uvScale': { value: new THREE.Vector2(2.0, 1.0) },
         'texture2': { value: lavaTexture },
         'starColor': { value: new THREE.Color(0xD8BFD8) },
     };
@@ -62,7 +63,7 @@ export function initializeStar() {
     
     vec4 noise = texture2D( texture1, vUv );
     vec2 T1 = vUv + vec2( 1.5, - 1.5 ) * time * 0.02;
-    vec2 T2 = vUv + vec2( - 0.5, 2.0 ) * time * 0.01;
+    vec2 T2 = vUv + vec2( - 0.6, 2.0 ) * time * 0.01;
     
     T1.x += noise.x * 2.0;
     T1.y += noise.y * 2.0;
@@ -71,10 +72,10 @@ export function initializeStar() {
     
     float p = texture2D( texture1, T1 * 1.0 ).a;
     
-    vec4 color = texture2D( texture2, T2 * 2.0 );
-    vec4 lavaColor = color * ( vec4( p, p, p, p ) * 1.5 ) + ( color * color - 0.05 );
+    vec4 color = texture2D( texture2, T2 * 0.5 );
+    vec4 lavaColor = color * ( vec4( p, p, p, p ) * 4.5 ) + ( color * color - 0.7 );
     
-    vec4 baseColor = mix(lavaColor, vec4(starColor, 1.0), 0.1 + 0.4 * p); 
+    vec4 baseColor = mix(lavaColor, vec4(starColor, 0.4), 0.1 + 0.5 * p); 
     
     float depth = gl_FragCoord.z / gl_FragCoord.w;
     const float LOG2 = 1.442695;
@@ -89,7 +90,6 @@ export function initializeStar() {
     
     }
 `;
-
 
     const shaderMaterial = new THREE.ShaderMaterial({
         uniforms: uniforms,
@@ -106,33 +106,55 @@ export function initializeStar() {
     scene.add(light);
 
     function animate() {
-        uniforms['time'].value += 0.02;
-        globe.rotation.x += 0.0015;
-        globe.rotation.y += 0.0015;
+        if (uniforms !== null && uniforms !== undefined && renderer !== null && renderer !== undefined && camera !== null && camera !== undefined) {
+            uniforms['time'].value += 0.02;
+            globe.rotation.x += 0.0008;
+            globe.rotation.y += 0.0008;
 
-        if (rendererContainer) {
-            camera.aspect = rendererContainer.clientWidth / rendererContainer.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(rendererContainer.clientWidth, rendererContainer.clientHeight);
+            if (rendererContainer) {
+                camera.aspect = rendererContainer.clientWidth / rendererContainer.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(rendererContainer.clientWidth, rendererContainer.clientHeight);
+            }
+            renderer.render(scene, camera);
+
+            requestAnimationFrame(animate);
         }
-        renderer.render(scene, camera);
-
-        requestAnimationFrame(animate);
     }
-    animate();
+        animate();
 
-    window.addEventListener('resize', onWindowResize);
+        window.addEventListener('resize', onWindowResize);
+
 }
 
-export function updateStar(hslColor, radius, luminosityClass) {
+export function updateStar(hslColor, radius, luminosityClass, phase) {
     if (!globe || !light) {
         console.warn('Star has not been initialized. Call initializeStar first.');
         return;
     }
 
+    const textureLoader = new THREE.TextureLoader();
+    if (phase === "Blue Giant") {
+        uniforms['texture2'].value = textureLoader.load('src/lib/images/fluidic-blue-abstract-lava-stone-texture-background_1000124-55482.png');
+        uniforms['fogDensity'].value = 0.85;
+    }
+    if(phase === "Red Dwarf"){
+        uniforms['texture2'].value = textureLoader.load('src/lib/images/1000_F_190595160_zjFOoCELy534iZ4cMvPmLA3nUVYcfLZU.png');
+        uniforms['fogDensity'].value = 0.75;
+    }
+    if(phase === "Red Giant"){
+        uniforms['texture2'].value = textureLoader.load('src/lib/images/1000_F_190595160_zjFOoCELy534iZ4cMvPmLA3nUVYcfLZU.png');
+        uniforms['fogDensity'].value = 1;
+    }
+    if(phase === "White Dwarf"){
+        uniforms['texture2'].value = textureLoader.load('src/lib/images/lightblue.png');
+    }
+    if(phase === "Yellow Dwarf"){
+        uniforms['fogDensity'].value = 0.15;
+    }
     uniforms['starColor'].value = hslColor !== undefined ? new THREE.Color().setHSL(hslColor[0] / 360, hslColor[1] / 100, hslColor[2] / 100) : uniforms['starColor'].value; // Update the uniform instead of the material color
 
-    const finalRadius = radius !== undefined ? radius : globe.geometry.parameters.radius;
+    const finalRadius = radius;
     const finalLuminosity = luminosityClass !== undefined ? luminosityClass : light.intensity;
 
     // Update the geometry and light intensity as before
@@ -148,40 +170,98 @@ function onWindowResize() {
         renderer.setSize(rendererContainer.clientWidth, rendererContainer.clientHeight);
     }
 }
-export function disposeStar() {
-    // Remove event listeners
-    window.removeEventListener('resize', onWindowResize);
 
+export function disposeStar() {
     // Dispose of geometries, materials, and textures
     if (globe) {
-        // Dispose of shader material
-        if (globe.material) {
-            globe.material.dispose();
-        }
 
-        // Dispose of geometry
-        if (globe.geometry) {
-            globe.geometry.dispose();
-        }
+        if (scene !== null && scene !== undefined) {
 
-        // Remove from scene
-        scene.remove(globe);
+            window.removeEventListener('resize', onWindowResize);
+
+            // Create a particle system for dissolving
+            const particleGeometry = new THREE.BufferGeometry();
+            const particleMaterial = new THREE.PointsMaterial({ color: 0xFFFFFF, size: 0.05 });
+            const particles = new THREE.Points(particleGeometry, particleMaterial);
+            scene.add(particles);
+
+            // Animate particles for dissolving effect
+            const particleCount = 5000; // Adjust the number of particles
+            const positions = new Float32Array(particleCount * 3);
+            const velocities = new Float32Array(particleCount * 3);
+
+            // Initialize particle positions and velocities
+            for (let i = 0; i < particleCount; i++) {
+                const index = i * 3;
+                positions[index] = Math.random() * 4 - 2; // Adjust the range
+                positions[index + 1] = Math.random() * 4 - 2; // Adjust the range
+                positions[index + 2] = Math.random() * 4 - 2; // Adjust the range
+
+                velocities[index] = (Math.random() - 0.5) * 0.1; // Adjust the speed
+                velocities[index + 1] = (Math.random() - 0.5) * 0.1; // Adjust the speed
+                velocities[index + 2] = (Math.random() - 0.5) * 0.1; // Adjust the speed
+            }
+
+            particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+            const particleTimer = setInterval(() => {
+                // Update particle positions
+                for (let i = 0; i < particleCount; i++) {
+                    const index = i * 3;
+                    positions[index] += velocities[index];
+                    positions[index + 1] += velocities[index + 1];
+                    positions[index + 2] += velocities[index + 2];
+                }
+                particleGeometry.attributes.position.needsUpdate = true;
+
+                // Reduce particle opacity for fading effect
+                particleMaterial.opacity -= 0.05; // Adjust the fading speed
+                particleMaterial.needsUpdate = true;
+
+                // Check if particles have faded out
+                if (particleMaterial.opacity <= 0) {
+                    scene.remove(particles);
+                    clearInterval(particleTimer);
+                }
+            }, 106);
+            if (globe.material) {
+                globe.material.dispose();
+            }
+
+            // Dispose of geometry
+            if (globe.geometry) {
+                globe.geometry.dispose();
+            }
+            scene.remove(globe);
+
+            // Dispose of any child objects in the scene
+            scene.traverse((object) => {
+                if (object instanceof THREE.Mesh) {
+                    // Dispose of geometry and material
+                    if (object.geometry) {
+                        object.geometry.dispose();
+                    }
+                    if (object.material) {
+                        if (Array.isArray(object.material)) {
+                            object.material.forEach((material) => {
+                                material.dispose();
+                            });
+                        } else {
+                            object.material.dispose();
+                        }
+                    }
+                }
+            });
+        }
     }
 
-    // Dispose of texture resources if needed
-    if (uniforms['texture1'].value) {
+    // Dispose of textures
+    if (uniforms && uniforms['texture1'] && uniforms['texture1'].value) {
         uniforms['texture1'].value.dispose();
     }
-    if (uniforms['texture2'].value) {
+    if (uniforms && uniforms['texture2'] && uniforms['texture2'].value) {
         uniforms['texture2'].value.dispose();
     }
-
-    // Clear references
-    globe = null;
-    uniforms = null;
-
-    // Clear the scene
-    scene = null;
 
     // Clear the renderer
     if (renderer) {
@@ -190,4 +270,10 @@ export function disposeStar() {
         renderer.domElement = null;
         renderer = null;
     }
+
+    // Reset variables to null
+    globe = null;
+    uniforms = null;
+    scene = null;
 }
+

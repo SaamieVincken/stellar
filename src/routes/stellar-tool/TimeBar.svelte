@@ -44,6 +44,6 @@
     }
 
     .custom-slider::-moz-range-thumb:active {
-        background-color: #1f3e6e; /* Bright blue color when active (dragging) */
+        background-color: #1f3e6e;
     }
 </style>

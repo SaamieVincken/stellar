@@ -1,8 +1,10 @@
 <script>
     import { onMount, onDestroy } from 'svelte';
     import {initializeNebula} from "$lib/shared/Models/NebulaModel.js";
+    import {disposeAllModels} from "$lib/shared/Models/DisposeAll.js";
 
-    onMount(() => {
+    onMount(async () => {
+        await disposeAllModels();
         initializeNebula();
     });
 </script>

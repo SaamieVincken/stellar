@@ -21,15 +21,15 @@ export function initializeBlackHole() {
     scene.add(blackHole);
 
 
-    const glowGeometry = new THREE.SphereGeometry(4.35); // Slightly larger than the black hole
+    const glowGeometry = new THREE.SphereGeometry(4.35);
     const glowMaterial = new THREE.ShaderMaterial({
         uniforms: {
-            glowColor: { type: 'c', value: new THREE.Color(0xff4500) }, // Adjusted to a more fiery orange-red color
+            glowColor: { type: 'c', value: new THREE.Color(0xff4500) },
             viewVector: { type: 'v3', value: camera.position },
-            c: { type: "f", value: 0.3 }, // Adjust these values
-            p: { type: "f", value: 10.5 }, // to control the glow intensity and falloff
-            noiseTexture: { type: 't', value: new THREE.TextureLoader().load('src/lib/images/supernovaMaterial2.jpg') }, // Path to a noise texture
-            time: { type: 'f', value: 0.5 } // Time for animation
+            c: { type: "f", value: 0.3 },
+            p: { type: "f", value: 10.5 },
+            noiseTexture: { type: 't', value: new THREE.TextureLoader().load('src/lib/images/supernovaMaterial2.jpg') },
+            time: { type: 'f', value: 0.5 }
         },
         vertexShader: `
         uniform vec3 viewVector;

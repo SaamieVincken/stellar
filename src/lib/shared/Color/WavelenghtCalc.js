@@ -11,5 +11,5 @@ const WiensConstant = new Decimal('2.898e-3'); // 2.898 * 10^-3
 export function CalculateWavelength(surfaceTemperature) {
     surfaceTemperature = new Decimal(surfaceTemperature);
     let wavelengthInMeters = WiensConstant.div(surfaceTemperature);
-    return  wavelengthInMeters.mul(1e9); // Convert to nanometers
+    return  wavelengthInMeters.mul(1e9);
 }
