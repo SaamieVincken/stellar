@@ -44,6 +44,7 @@
     "bignumber.js": "^9.1.2",
     "decimal.js": "^10.4.3",
     "lil-gui": "^0.18.2",
+    "papaparse": "^5.4.1",
     "simplex-noise": "^4.0.1",
     "svelte-spa-router": "^3.3.0",
     "three": "^0.157.0",

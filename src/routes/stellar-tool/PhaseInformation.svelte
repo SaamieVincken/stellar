@@ -2,9 +2,6 @@
     .mt-extraTitle {
         margin-top: 280px;
     }
-    .mt-extra {
-        margin-top: 350px;
-    }
 
     .custom-border{
         border: #000d21;
@@ -12,6 +9,13 @@
     .tooltip {
         position: relative;
 
+    }
+
+    .customButton{
+        position: relative;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
     }
 
     .tooltip .tooltiptext {
@@ -59,33 +63,54 @@
     import Supernova from "./Models/Supernova.svelte";
     import BlackHole from "./Models/BlackHole.svelte";
     import Nebula from "./Models/Nebula.svelte";
-    import PlayButton from "./PlayButton.svelte";
-    import ShowAll from "./Models/ShowAll.svelte";
+    import {
+        LuminosityClassPercentage
+    } from "$lib/shared/SpectralClassification/LuminosityClass/LuminosityPercentage";
+    import NeutronStar from "./Models/NeutronStar.svelte";
 
     let showAllActive = false;
+    let matchIsFound = false;
+    let luminosityClassKey;
+    let starData = {};
 
     function handlePlayButtonClick() {
         showAllActive = !showAllActive;
     }
 
-    import {
-        LuminosityClassPercentage
-    } from "$lib/shared/SpectralClassification/LuminosityClass/LuminosityPercentage";
-    import Lightning from "./Models/Lightning.svelte";
-    import NeutronStar from "./Models/NeutronStar.svelte";
-    import ExplodingSphere from "./Models/ExplodingSphere.svelte";
-
-    let luminosityClassKey;
-    let starData = {};
-    let previousStar = "";
     $: if ($star) {
         luminosityClassKey = getKeyByValue(LuminosityClassPercentage, starData.luminosityClass);
         starData = $star;
     }
+
     function getKeyByValue(object, value) {
         return Object.keys(object).find(key => object[key] === value);
     }
+
+    let buttonText = "Search for match";
+    function searchForMatch(){
+        buttonText = "Match has been found!"
+        if(matchIsFound){
+            window.location.href = './stellar-models';
+        }
+        matchIsFound = true;
+
+    }
+
 </script>
+<div class="fixed top-0 right-0 w-full flex mt-80 mr-32 z-20">
+    <div class="ml-auto w-1/5 customButton">
+        {#if starData.phase !== undefined}
+            <button
+                class="w-36 h-auto flex items-center justify-center text-white mt-1 mr-4 cursor-pointer rounded-lg p-2"
+                style="background-color: #3F3F3F;"
+                on:click={() => { if ($star !== undefined) searchForMatch(); }}
+            >
+                {buttonText}
+            </button>
+        {/if}
+    </div>
+</div>
+
 
 <div class="fixed flex items-center justify-center w-full">
     <div class="-mt-52" style="position: relative;">
@@ -108,7 +133,6 @@
 </div>
 
 
-
     <!-- Add PlayButton-->
 
 <!--    <PlayButton on:click={handlePlayButtonClick} />-->
@@ -117,6 +141,8 @@
 <!--    <ShowAll activate={showAllActive} />-->
 
 <!--    <TimeBar/>-->
+
+
     <div class="fixed flex items-center justify-center w-full">
         <div class="mt-extraTitle w-1/2 text-white hover:text-blue-500">
             {#if starData.phase !== undefined}
@@ -139,7 +165,7 @@
         </div>
     </div>
 
-<div class="fixed flex items-center justify-center w-full">
+<div class="fixed flex items-center justify-center w-full mt-80">
     <div class={starData.phase === "Black Hole" ? 'mt-extra text-white bg-black border-2 custom-border font-mono w-1/6' : 'mt-extra text-white bg-black border-2 custom-border font-mono w-1/2'} style={starData.phase === "Black Hole" ? 'margin-right:500px;' : ''}>
         {#if starData.phase !== undefined}
             {#if starData.phase !== "Black Hole" }
@@ -172,7 +198,7 @@
                         </div>
 
                         <div class="ml-1 tooltip hover:text-blue-500">
-                            Density: {starData.stellarDensity.toExponential(2)} g/cm³
+                            density: {starData.stellarDensity.toExponential(2)} g/cm³
                             <span class="tooltiptext" style="width: 480px;">{(starData.stellarDensity / 1.408).toFixed(2)}
                                 times the Sun's density</span>
                         </div>
@@ -185,11 +211,7 @@
                     <div>
 
                         <p class="ml-1 text-blue-500">spectral type: {starData.spectralType}</p>
-
-
                         <p class="ml-1 text-blue-500">luminosity class: {luminosityClassKey}</p>
-
-
 
                     </div>
                 </div>

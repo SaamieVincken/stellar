@@ -42,6 +42,7 @@
 
 <style>
     #footer {
+        z-index: 1000;
         color: white;
         text-align: center;
         position: fixed;
@@ -66,18 +67,18 @@
     </div>
     <div class="flex justify-end items-center">
         <ul class="flex h-7 -mt-8">
-            <li
-                class:active={$page.url.pathname === "./stellar-tool"}
-                class="mr-2 w-36 text-center text-white"
+            <li class:active={$page.url.pathname === './stellar-tool'}
+                class="mt-1 mr-2 w-36 text-center text-white"
                 style="background-color: #3F3F3F;">
-                <a href="./stellar-tool">Stellar tool</a>
+                <a href="./stellar-tool">stellar tool</a>
             </li>
+
             <li
                 class:active={$page.url.pathname === "/stellar-models"}
-                class="mr-2  w-36 text-center text-white"
+                class="mt-1 mr-2  w-36 text-center text-white"
                 style="background-color: #3F3F3F;">
 
-                <a href="./stellar-models">Model test</a>
+                <a href="./stellar-models">data set</a>
             </li>
         </ul>
     </div>

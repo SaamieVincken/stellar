@@ -110,7 +110,7 @@
     });
 </script>
 
-<div class="app min-h-screen relative" bind:this={container}>
+<div class="app min-h-screen fixed" bind:this={container}>
     <main class="absolute inset-0 z-10 overflow-y-auto">
         <slot />
     </main>

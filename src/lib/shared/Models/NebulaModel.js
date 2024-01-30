@@ -24,7 +24,7 @@ export function initializeNebula() {
     renderer.antialias = true;
 
 
-    renderer.setSize(1500, 800);
+    renderer.setSize(1900, 900);
     rendererContainer = document.getElementById('renderer-container');
     if (rendererContainer) {
         rendererContainer.appendChild(renderer.domElement);
@@ -171,15 +171,15 @@ export function initializeNebula() {
             vec4 texColor = texture(supernovaTexture, uv);
 
             // Apply the texture color directly
-            ac.rgb = texColor.rgb * 1.4;
+            ac.rgb = texColor.rgb * 1.05;
 
             // Nebula effect: Create a large indent in the center
                  float distanceFromTop = length(p.xy - vec2(1.0, 4.0)); // Adjusting calculation to consider the distance from the top
-        float nebulaFactor = smoothstep(5.1, 4.5, distanceFromTop); 
+        float nebulaFactor = smoothstep(9.1, 6.5, distanceFromTop); 
         
             float alphaContribution = (1.0 - ac.a) * d * (opacity * nebulaFactor);  
             ac.a += alphaContribution; 
-            if (ac.a >= 0.15) break;
+            if (ac.a >= 0.5) break;
 
             p += rayDir * delta;
         }
@@ -228,7 +228,14 @@ function render() {
     if(renderer !== null && renderer !== undefined) {
         requestAnimationFrame(render);
         mesh.material.uniforms.cameraPos.value.copy(camera.position);
-        mesh.rotation.y = -performance.now() / 15000;
+       // mesh.rotation.y = -performance.now() / 15000;
+        // Rotating primarily around the right side of the mesh
+        const rotationSpeed = 0.0003; // Adjust rotation speed as needed
+        const rotationOffset = Math.PI / 0.33; // Offset to focus on the right side
+        const rotationRange = 0.35; // Adjust range of rotation as needed
+
+        // Calculate rotation
+        mesh.rotation.y = rotationOffset + Math.sin(performance.now() * rotationSpeed) * rotationRange;
         mesh.material.uniforms.frame.value++;
         renderer.setClearColor(0x000000, 0);
         renderer.clear();
