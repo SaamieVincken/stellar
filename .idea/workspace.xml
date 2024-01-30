@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="48af5030-bbdc-478a-a1ed-bc55f02ba201" name="Changes" comment="Add python backend setup">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.eslintrc.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.idea/Stellar.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.npmrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.prettierignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/qodana.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/app.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/app.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/.nojekyll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/assets/highlight.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/assets/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/assets/navigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/assets/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/assets/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/classes/Phase_Hardcoded_StellarObjects.BlackHole.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/classes/Phase_Hardcoded_StellarObjects.BlueGiant.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/classes/Phase_Hardcoded_StellarObjects.GType.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/classes/Phase_Hardcoded_StellarObjects.NeutronStar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/classes/Phase_Hardcoded_StellarObjects.ProtoStar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/classes/Phase_Hardcoded_StellarObjects.RedDwarf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/classes/Phase_Hardcoded_StellarObjects.RedGiant.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/classes/Phase_Hardcoded_StellarObjects.Supernova.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/classes/Phase_Hardcoded_StellarObjects.WhiteDwarf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/classes/StarClass.Star.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/enums/Sequence_SequenceEnum.Sequences.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/Phase_PhaseCalc.GetPhases.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/Phase_PhaseCalc.MS_phaseCalc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/Phase_PhaseCalc.NMS_phaseCalc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/Sequence_SequenceCalc.sequenceCalc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/StellarProperties_EffectiveTemperature.calculateEffectiveTemperature.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/StellarProperties_LuminosityMassRelation.calculateLuminosity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/StellarProperties_LuminosityMassRelation.calculateMass.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/StellarProperties_SolarMass.convertMassToSolarMass.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/StellarProperties_SolarMass.convertSolarMassToGrams.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/StellarProperties_SolarMass.convertSolarMassToKilograms.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/StellarProperties_StellarDensity.calculateStellarDensity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/StellarProperties_StellarRadius.calculateStellarRadius.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/StellarProperties_StellarVolume.calculateSphereVolume.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/functions/StellarProperties_SurfaceGravity.calculateSurfaceGravity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/Phase_Hardcoded_StellarObjects.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/Phase_PhaseCalc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/Sequence_SequenceCalc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/Sequence_SequenceEnum.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/StarClass.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/StellarProperties_EffectiveTemperature.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/StellarProperties_LuminosityMassRelation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/StellarProperties_SolarMass.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/StellarProperties_StellarDensity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/StellarProperties_StellarRadius.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/StellarProperties_StellarVolume.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/modules/StellarProperties_SurfaceGravity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/documentation/typedoc/variables/StellarProperties_StellarVolume.pi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/1000_F_190595160_zjFOoCELy534iZ4cMvPmLA3nUVYcfLZU.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/68a0c5e6-33a1-4006-8cf6-939bc6cadd04-modified.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/68a0c5e6-33a1-4006-8cf6-939bc6cadd04.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/BlackHole.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/Blue.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/BlueGiant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/GType.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/Lava.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/NeutronStar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/ProtoStar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/RedDwarf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/StellarNebula.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/Video.mov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/Video_1.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/White_Dwarf .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/Wrapped-full-displacement-map-of-the-populated-board-fixed-in-the-4-corners-seen-from.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/b0ab6bf1-1ea3-4a8a-ac39-aa327181421d.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/cb0e44c0-7bf9-47bb-8f05-cf8a581d2cbe.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/cloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/f5db2faf-6b05-4df7-8089-4c6b9da8f19b.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/fluidic-blue-abstract-lava-stone-texture-background_1000124-55482.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/lavatile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/lightblue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/max-saeling-m8nRxnGFWVc-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/nasa-rTZW4f02zY8-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/nasa-vltMzn0jqsA-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/red-pastel-fractal-glow-effect-animation-background-video.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/starrySky.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/sun.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/supernova.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/supernovaMaterial.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/supernovaMaterial2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Age/MS_AgeCalc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Age/MainSequenceDuriation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Age/NMS_AgeCalc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/Color.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/HSL/GenerateHSL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/HSL/GenerateHSL.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/HSL/Hue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/HSL/Hue.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/HSL/Lightness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/HSL/Lightness.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/HSL/Saturation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/HSL/Saturation.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/WavelenghtCalc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Color/WavelenghtCalc.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/KeplerDataSet/KeplerDataInteractor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/KeplerDataSet/MatchStar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/BlackHoleModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/DisposeAll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/ExplodingSphereModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/NebulaModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/NeutronStar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/StarBackground.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/StarModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/SupernovaModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Phase/PhaseCalc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Phase/PhaseCalc.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Phase/PhasesEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Phase/StellarObjects.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Phase/StellarObjects.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Sequence/SequenceCalc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Sequence/SequenceCalc.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/Sequence/SequenceEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/SetStar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/SpectralClassification/LuminosityClass/LuminosityClass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/SpectralClassification/LuminosityClass/LuminosityClass.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/SpectralClassification/LuminosityClass/LuminosityPercentage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/SpectralClassification/SpectralType/SpectralType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/SpectralClassification/SpectralType/SpectralType.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/SpectralClassification/SpectralType/SpectralTypeEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StarClass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StarStore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/EffectiveTemperature.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/LuminosityMassRelation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/SolarLuminosityToWatts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/SolarMass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/StellarDensity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/StellarRadius.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/StellarVolume.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/SurfaceGravity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/Footer.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/Header.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-models/+layout.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-models/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-models/imageExample.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/+layout.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/InputStellarTool.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/BlackHole.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/ExplodingSphere.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/Lightning.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/Nebula.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/NeutronStar.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/ShowAll.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/StarModel.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/Supernova.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/PhaseInformation.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/PlayButton.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/StellarTool.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/TimeBar.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/routes/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/.nojekyll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/assets/highlight.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/assets/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/assets/navigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/assets/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/assets/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/enums/SpectralClassification_SpectralType_SpectralTypeEnum.SpectralType.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/modules/SpectralClassification_LuminosityClass_LuminosityPercentage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/modules/SpectralClassification_SpectralType_SpectralTypeEnum.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/typedoc/variables/SpectralClassification_LuminosityClass_LuminosityPercentage.LuminosityClassPercentage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/static/Video(1).mov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/static/Video.mov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/svelte.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/typedoc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/.idea/Stellar-Astrodata.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/data/keplerstellar.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/KeplerDataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Stellar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Stellar.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.npmrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qodana.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/1000_F_190595160_zjFOoCELy534iZ4cMvPmLA3nUVYcfLZU.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/68a0c5e6-33a1-4006-8cf6-939bc6cadd04-modified.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/68a0c5e6-33a1-4006-8cf6-939bc6cadd04.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/Blue.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/Lava.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/StellarNebula.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/Wrapped-full-displacement-map-of-the-populated-board-fixed-in-the-4-corners-seen-from.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/b0ab6bf1-1ea3-4a8a-ac39-aa327181421d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/cb0e44c0-7bf9-47bb-8f05-cf8a581d2cbe.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/f5db2faf-6b05-4df7-8089-4c6b9da8f19b.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/fluidic-blue-abstract-lava-stone-texture-background_1000124-55482.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/lavatile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/lightblue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/max-saeling-m8nRxnGFWVc-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/nasa-rTZW4f02zY8-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/nasa-vltMzn0jqsA-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/red-pastel-fractal-glow-effect-animation-background-video.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/starrySky.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/sun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/supernovaMaterial.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/supernovaMaterial2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/images/white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Age/MS_AgeCalc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Age/MainSequenceDuriation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Age/NMS_AgeCalc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/Color.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/HSL/GenerateHSL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/HSL/Hue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/HSL/Lightness.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/HSL/Saturation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/WavelenghtCalc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/KeplerDataSet/KeplerDataInteractor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/KeplerDataSet/MatchStar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/BlackHoleModel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/DisposeAll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/ExplodingSphereModel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/NebulaModel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/NeutronStar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/StarBackground.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/StarModel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/SupernovaModel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Phase/PhaseCalc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Phase/PhasesEnum.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Phase/StellarObjects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Sequence/SequenceCalc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/Sequence/SequenceEnum.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/SetStar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/SpectralClassification/LuminosityClass/LuminosityClass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/SpectralClassification/LuminosityClass/LuminosityPercentage.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/SpectralClassification/SpectralType/SpectralType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/SpectralClassification/SpectralType/SpectralTypeEnum.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/StarClass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/StarStore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/EffectiveTemperature.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/LuminosityMassRelation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/SolarLuminosityToWatts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/SolarMass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/StellarDensity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/StellarRadius.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/StellarVolume.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/SurfaceGravity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Footer.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Header.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-models/+layout.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-models/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-models/imageExample.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/+layout.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/InputStellarTool.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/BlackHole.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/ExplodingSphere.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/Lightning.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/Nebula.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/NeutronStar.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/ShowAll.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/StarModel.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/Supernova.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/PhaseInformation.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/PlayButton.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/StellarTool.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/TimeBar.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/.nojekyll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/assets/highlight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/assets/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/assets/navigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/assets/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/assets/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/enums/SpectralClassification_SpectralType_SpectralTypeEnum.SpectralType.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/modules/SpectralClassification_LuminosityClass_LuminosityPercentage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/modules/SpectralClassification_SpectralType_SpectralTypeEnum.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typedoc/variables/SpectralClassification_LuminosityClass_LuminosityPercentage.LuminosityClassPercentage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Client/static/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/giphy.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Client/static/giphy.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/static/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/typedoc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2bgrN9jPlVhJSG8EU2C87XWJMqX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Code projects\Stellar" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48af5030-bbdc-478a-a1ed-bc55f02ba201" name="Changes" comment="" />
+      <created>1706647521111</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706647521111</updated>
+      <workItem from="1706647525301" duration="1085000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Client/src/lib/shared/SpectralClassification/LuminosityClass/LuminosityPercentage.js.map" />
+        <option value="$PROJECT_DIR$/Client/src/lib/shared/SpectralClassification/SpectralType/SpectralTypeEnum.js.map" />
+        <option value="$PROJECT_DIR$/Client/src/lib/shared/Sequence/SequenceEnum.js.map" />
+        <option value="$PROJECT_DIR$/Client/vite.config.js" />
+        <option value="$PROJECT_DIR$/Client/vite.config.js.map" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add python backend setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add python backend setup" />
+  </component>
+</project>
