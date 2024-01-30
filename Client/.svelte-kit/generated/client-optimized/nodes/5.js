@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/stellar-models/+page.svelte";

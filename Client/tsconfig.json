@@ -1,0 +1,23 @@
+{
+  "extends": "./.svelte-kit/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "types": ["svelte", "three"],
+    "jsx": "preserve", // Add this line for Svelte support
+    "lib": ["dom", "es2015", "es5"] // Add the "lib" option here
+  },
+  "include": [
+    "./src/lib/shared/Color/*.ts",
+    "./src/lib/shared/Color/HSL/*.ts",
+    "./src/lib/shared/SpectralClassification/LuminosityClass/*.ts",
+    "./src/lib/shared/SpectralClassification/SpectralType/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,1 @@
+import{s as e,o as n}from"../chunks/scheduler.b108d059.js";import{S as s,i as l}from"../chunks/index.310f819c.js";function r(t){return n(()=>{setTimeout(()=>{window.location.href="./stellar-tool"},0)}),[]}class u extends s{constructor(o){super(),l(this,o,r,null,e,{})}}export{u as component};
