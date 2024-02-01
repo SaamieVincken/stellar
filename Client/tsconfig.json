@@ -1,5 +1,5 @@
 {
-  "extends": "./.svelte-kit/tsconfig.json",
+  "extends": "../.svelte-kit/tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
@@ -19,5 +19,7 @@
     "./src/lib/shared/SpectralClassification/LuminosityClass/*.ts",
     "./src/lib/shared/SpectralClassification/SpectralType/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "../node_modules"
+  ]
 }
