@@ -4,105 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48af5030-bbdc-478a-a1ed-bc55f02ba201" name="Changes" comment="Add python backend setup">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.svelte-kit/ambient.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.svelte-kit/ambient.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.svelte-kit/generated/server/internal.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.svelte-kit/generated/server/internal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qodana.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/Lava.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/StellarNebula.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/Wrapped-full-displacement-map-of-the-populated-board-fixed-in-the-4-corners-seen-from.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/download.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/f5db2faf-6b05-4df7-8089-4c6b9da8f19b.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/fluidic-blue-abstract-lava-stone-texture-background_1000124-55482.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/lavatile.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/lightblue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/max-saeling-m8nRxnGFWVc-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/nasa-rTZW4f02zY8-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/nasa-vltMzn0jqsA-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/red-pastel-fractal-glow-effect-animation-background-video.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/starrySky.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/sun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/supernovaMaterial.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/supernovaMaterial2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Age/MS_AgeCalc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Age/MainSequenceDuriation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Age/NMS_AgeCalc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/HSL/GenerateHSL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/HSL/Hue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/HSL/Lightness.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/HSL/Saturation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Color/WavelenghtCalc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/KeplerDataSet/KeplerDataInteractor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/KeplerDataSet/MatchStar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/DisposeAll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/ExplodingSphereModel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/NebulaModel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/NeutronStar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/StarBackground.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/StarModel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Models/SupernovaModel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Phase/PhaseCalc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Phase/PhasesEnum.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Phase/StellarObjects.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Sequence/SequenceCalc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/Sequence/SequenceEnum.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/SetStar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/SpectralClassification/LuminosityClass/LuminosityClass.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/SpectralClassification/LuminosityClass/LuminosityPercentage.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/SpectralClassification/SpectralType/SpectralType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/SpectralClassification/SpectralType/SpectralTypeEnum.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/StarClass.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/StarStore.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/EffectiveTemperature.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/LuminosityMassRelation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/SolarLuminosityToWatts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/SolarMass.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/StellarDensity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/StellarRadius.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/StellarVolume.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/shared/StellarProperties/SurfaceGravity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Footer.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Header.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-models/imageExample.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/InputStellarTool.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/ExplodingSphere.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/Lightning.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/Nebula.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/NeutronStar.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/ShowAll.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/StarModel.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/Models/Supernova.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/PhaseInformation.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/PlayButton.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/StellarTool.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/stellar-tool/TimeBar.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typedoc/assets/highlight.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typedoc/assets/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typedoc/assets/navigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typedoc/assets/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typedoc/assets/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typedoc/enums/SpectralClassification_SpectralType_SpectralTypeEnum.SpectralType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typedoc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typedoc/modules/SpectralClassification_LuminosityClass_LuminosityPercentage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typedoc/modules/SpectralClassification_SpectralType_SpectralTypeEnum.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typedoc/variables/SpectralClassification_LuminosityClass_LuminosityPercentage.LuminosityClassPercentage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/giphy.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/typedoc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" />
-    </list>
+    <list default="true" id="48af5030-bbdc-478a-a1ed-bc55f02ba201" name="Changes" comment="Add python backend setup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,6 +22,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -174,6 +79,15 @@
       <updated>1706647521111</updated>
       <workItem from="1706647525301" duration="1085000" />
     </task>
+    <task id="LOCAL-00001" summary="Add python backend setup">
+      <option name="closed" value="true" />
+      <created>1706783946247</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706783946247</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
