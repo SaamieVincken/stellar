@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48af5030-bbdc-478a-a1ed-bc55f02ba201" name="Changes" comment="Add python backend setup" />
+    <list default="true" id="48af5030-bbdc-478a-a1ed-bc55f02ba201" name="Changes" comment="Add python backend setup">
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/GravitationalForce.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/data/keplerstellar.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
