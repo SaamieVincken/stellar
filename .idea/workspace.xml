@@ -4,12 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48af5030-bbdc-478a-a1ed-bc55f02ba201" name="Changes" comment="Add python backend setup">
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/GravitationalForce.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/data/keplerstellar.csv" afterDir="false" />
+    <list default="true" id="48af5030-bbdc-478a-a1ed-bc55f02ba201" name="Changes" comment="Add everything bc broken laptop">
+      <change afterPath="$PROJECT_DIR$/Client/src/lib/images/nasa-rTZW4f02zY8-unsplash(1).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Equations/Convert/luminosity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Equations/Convert/luminosity_mass_relation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Equations/Convert/mass.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Equations/density.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Equations/effective_temperature.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Equations/radius.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.svelte-kit/ambient.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.svelte-kit/ambient.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.svelte-kit/generated/server/internal.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.svelte-kit/generated/server/internal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/lib/shared/Models/NeutronStar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/NeutronStar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/lib/shared/Models/StarModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/StarModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/lib/shared/Models/SupernovaModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/lib/shared/Models/SupernovaModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/GravitationalForce.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Equations/Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/SolarMass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/SolarMass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/StellarRadius.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/lib/shared/StellarProperties/StellarRadius.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/routes/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/routes/Footer.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/routes/stellar-models/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/routes/stellar-models/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/routes/stellar-tool/InputStellarTool.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/InputStellarTool.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/NeutronStar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/NeutronStar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/StarModel.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/StarModel.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/Supernova.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/Models/Supernova.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/routes/stellar-tool/PhaseInformation.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/routes/stellar-tool/PhaseInformation.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,26 +64,34 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ACTIVE_CLOUD_PROJECT_ACCOUNT&quot;: &quot;saamievincken@protonmail.com&quot;,
+    &quot;ACTIVE_CLOUD_PROJECT_ID&quot;: &quot;greenroom-405417&quot;,
+    &quot;ACTIVE_CLOUD_PROJECT_NAME&quot;: &quot;greenroom&quot;,
+    &quot;ACTIVE_CLOUD_PROJECT_NUMBER&quot;: &quot;1095344673406&quot;,
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.google.cloudcode.ide_session_index&quot;: &quot;20240531_0000&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Citric&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Code projects\\Stellar\\Client\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Code projects\Stellar\Client" />
+      <recent name="C:\Code projects\Stellar\Client\src\lib\images" />
       <recent name="C:\Code projects\Stellar" />
+      <recent name="C:\Code projects\Stellar\Client" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -84,6 +110,19 @@
       <option name="presentableId" value="Default" />
       <updated>1706647521111</updated>
       <workItem from="1706647525301" duration="1085000" />
+      <workItem from="1707301302213" duration="2792000" />
+      <workItem from="1708524224631" duration="87000" />
+      <workItem from="1710578699787" duration="3128000" />
+      <workItem from="1711098001290" duration="4000" />
+      <workItem from="1711098065297" duration="1679000" />
+      <workItem from="1711110440326" duration="823000" />
+      <workItem from="1711111650485" duration="476000" />
+      <workItem from="1713446168423" duration="6316000" />
+      <workItem from="1713871890619" duration="1190000" />
+      <workItem from="1714126063738" duration="598000" />
+      <workItem from="1715164330386" duration="615000" />
+      <workItem from="1717166015074" duration="2178000" />
+      <workItem from="1717410715078" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="Add python backend setup">
       <option name="closed" value="true" />
@@ -108,9 +147,21 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add python backend setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add python backend setup" />
+    <MESSAGE value="Add everything bc broken laptop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add everything bc broken laptop" />
   </component>
 </project>
