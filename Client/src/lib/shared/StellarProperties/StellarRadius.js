@@ -2,7 +2,7 @@ import Decimal from 'decimal.js';
 import { convertSolarLuminosityToWatts } from "$lib/shared/StellarProperties/SolarLuminosityToWatts.js";
 
 // Stefan Boltzmann constant in W/(m^2 K^4)
-const stefanBoltzmannConstant = new Decimal('5.67e-8');
+
 
 // Pi constant
 const pi = new Decimal(Math.PI);

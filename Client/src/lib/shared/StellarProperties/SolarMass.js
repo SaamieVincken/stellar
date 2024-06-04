@@ -1,7 +1,5 @@
 import Decimal from 'decimal.js';
 
-// Constant for the mass of our sun in kilograms (kg)
-const sunMass = new Decimal('1.989e30');
 
 /**
  * Converts a mass value to solar mass

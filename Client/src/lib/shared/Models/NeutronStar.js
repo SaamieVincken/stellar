@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter.js';
+
 
 let scene, camera, renderer, globe, light, rendererContainer;
 let uniforms;
@@ -133,3 +135,27 @@ function onWindowResize() {
     }
 }
 
+export function exportGLTF() {
+    const exporter = new GLTFExporter();
+    exporter.parse(scene, function (gltf) {
+        const output = JSON.stringify(gltf, null, 2);
+        saveString(output, 'scene.gltf');
+    }, { binary: false }); // Set to true for binary glTF (.glb)
+}
+
+function saveString(text, filename) {
+    const blob = new Blob([text], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+}
+
+// Optional: For binary (.glb) export, you can use this function
+function saveArrayBuffer(buffer, filename) {
+    const blob = new Blob([buffer], { type: 'application/octet-stream' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+}

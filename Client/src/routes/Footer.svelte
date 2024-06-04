@@ -48,7 +48,7 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        height: 40px;
+        height: 50px;
         background-color: #121212;
         transition: height 0.4s ease;
     }
@@ -68,14 +68,14 @@
     <div class="flex justify-end items-center">
         <ul class="flex h-7 -mt-8">
             <li class:active={$page.url.pathname === './stellar-tool'}
-                class="mt-1 mr-2 w-36 text-center text-white"
+                class="mt-1 mr-2 h-7 w-36 text-center text-white"
                 style="background-color: #3F3F3F;">
                 <a href="./stellar-tool">stellar tool</a>
             </li>
 
             <li
                 class:active={$page.url.pathname === "/stellar-models"}
-                class="mt-1 mr-2  w-36 text-center text-white"
+                class="mt-1 mr-2 h-7 w-36 text-center text-white"
                 style="background-color: #3F3F3F;">
 
                 <a href="./stellar-models">data set</a>

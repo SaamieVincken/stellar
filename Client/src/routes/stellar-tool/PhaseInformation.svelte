@@ -97,23 +97,24 @@
     }
 
 </script>
-<div class="fixed top-0 right-0 w-full flex mt-80 mr-32 z-20">
-    <div class="ml-auto w-1/5 customButton">
-        {#if starData.phase !== undefined}
-            <button
-                class="w-36 h-auto flex items-center justify-center text-white mt-1 mr-4 cursor-pointer rounded-lg p-2"
-                style="background-color: #3F3F3F;"
-                on:click={() => { if ($star !== undefined) searchForMatch(); }}
-            >
-                {buttonText}
-            </button>
-        {/if}
-    </div>
-</div>
+<!--<div class="fixed top-0 right-0 w-full flex mt-80 mr-32 z-20">-->
+<!--    <div class="ml-auto w-1/5 customButton">-->
+<!--        {#if starData.phase !== undefined}-->
+<!--            <button-->
+<!--                class="w-36 h-auto flex items-center justify-center text-white mt-1 mr-4 cursor-pointer rounded-lg p-2"-->
+<!--                style="background-color: #3F3F3F;"-->
+<!--                on:click={() => { if ($star !== undefined) searchForMatch(); }}-->
+<!--            >-->
+<!--                {buttonText}-->
+<!--            </button>-->
+<!--        {/if}-->
+<!--    </div>-->
+<!--</div>-->
 
-
+<br/>
+<br/>
 <div class="fixed flex items-center justify-center w-full">
-    <div class="-mt-52" style="position: relative;">
+    <div class="-mt-60" style="position: relative;">
         {#if starData.phase !== undefined}
             {#if starData.phase === "Supernova"}
                 <Supernova/>
@@ -132,7 +133,8 @@
     </div>
 </div>
 
-
+<br/>
+<br/>
     <!-- Add PlayButton-->
 
 <!--    <PlayButton on:click={handlePlayButtonClick} />-->
@@ -143,7 +145,7 @@
 <!--    <TimeBar/>-->
 
 
-    <div class="fixed flex items-center justify-center w-full">
+    <div class="fixed flex items-center justify-center w-full mt-52">
         <div class="mt-extraTitle w-1/2 text-white hover:text-blue-500">
             {#if starData.phase !== undefined}
                 {#if starData.phase !== "Black Hole" }
@@ -164,8 +166,14 @@
             {/if}
         </div>
     </div>
-
-<div class="fixed flex items-center justify-center w-full mt-80">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="fixed flex items-center justify-center w-full mt-96">
     <div class={starData.phase === "Black Hole" ? 'mt-extra text-white bg-black border-2 custom-border font-mono w-1/6' : 'mt-extra text-white bg-black border-2 custom-border font-mono w-1/2'} style={starData.phase === "Black Hole" ? 'margin-right:500px;' : ''}>
         {#if starData.phase !== undefined}
             {#if starData.phase !== "Black Hole" }
@@ -210,8 +218,8 @@
                     </div>
                     <div>
 
-                        <p class="ml-1 text-blue-500">spectral type: {starData.spectralType}</p>
-                        <p class="ml-1 text-blue-500">luminosity class: {luminosityClassKey}</p>
+<!--                        <p class="ml-1 text-blue-500">spectral type: {starData.spectralType}</p>-->
+<!--                        <p class="ml-1 text-blue-500">luminosity class: {luminosityClassKey}</p>-->
 
                     </div>
                 </div>

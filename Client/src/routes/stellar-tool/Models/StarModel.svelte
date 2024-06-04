@@ -58,7 +58,7 @@
             default:
                 width = '600px';
                 height = '600px';
-                marginTop = '0px';
+                marginTop = '90px';
         }
         containerStyle = `width: ${width}; height: ${height}; margin-top: ${marginTop};`;
     }

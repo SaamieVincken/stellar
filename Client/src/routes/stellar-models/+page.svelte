@@ -30,7 +30,7 @@
 
 
 <div class="fixed flex items-center justify-center w-full">
-    <div class="text-black bg-gray-300 w-3/5 text-center mt-20">
-        <p>TEST</p>
+    <div class="text-black bg-gray-500 h-6 w-3/5 text-center mt-20">
+        <p>Work in progress... NASA and Caltech database connection coming...</p>
     </div>
 </div>

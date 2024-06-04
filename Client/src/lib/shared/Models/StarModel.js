@@ -105,11 +105,20 @@ export function initializeStar() {
     light.position.set(5, 5, 7);
     scene.add(light);
 
+    let previousTime = performance.now();
+
     function animate() {
         if (uniforms !== null && uniforms !== undefined && renderer !== null && renderer !== undefined && camera !== null && camera !== undefined) {
-            uniforms['time'].value += 0.02;
-            globe.rotation.x += 0.0008;
-            globe.rotation.y += 0.0008;
+            const currentTime = performance.now();
+            const deltaTime = (currentTime - previousTime) / 1000;
+            previousTime = currentTime;
+
+            const rotationSpeed = 0.1;
+            const rotationIncrement = rotationSpeed * deltaTime;
+
+            uniforms['time'].value += 0.007;
+            globe.rotation.x += rotationIncrement;
+            globe.rotation.y += rotationIncrement;
 
             if (rendererContainer) {
                 camera.aspect = rendererContainer.clientWidth / rendererContainer.clientHeight;
@@ -121,11 +130,16 @@ export function initializeStar() {
             requestAnimationFrame(animate);
         }
     }
+
+    animate();
+
+    window.addEventListener('resize', onWindowResize);
+
         animate();
 
         window.addEventListener('resize', onWindowResize);
 
-}
+    }
 
 export function updateStar(hslColor, radius, luminosityClass, phase) {
     if (!globe || !light) {

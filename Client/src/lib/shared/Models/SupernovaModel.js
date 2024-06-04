@@ -25,8 +25,7 @@ export function initializeSupernova() {
     } else {
         document.body.appendChild(renderer.domElement);
     }
-    supernovaTexture = new THREE.TextureLoader().load('src/lib/images/nasa-rTZW4f02zY8-unsplash.jpg' );
-    secondTexture = new THREE.TextureLoader().load('src/lib/images/nasa-rTZW4f02zY8-unsplash.jpg');
+    supernovaTexture = new THREE.TextureLoader().load('src/lib/images/nasa-rTZW4f02zY8-unsplash(1).jpg' );
 
     // Cloud texture setup
     const size = 120;
@@ -83,9 +82,6 @@ export function initializeSupernova() {
 
     uniform sampler2D supernovaTexture;
 
-    uniform mat4 modelViewMatrix;
-    uniform mat4 projectionMatrix;
-
     in vec3 vOrigin;
     in vec3 vDirection;
 
@@ -126,11 +122,6 @@ export function initializeSupernova() {
 
     float sample1(vec3 p) {
         return texture(map, p).r;
-    }
-
-    float shading(vec3 coord) {
-        float step = 0.01;
-        return sample1(coord + vec3(-step)) - sample1(coord + vec3(step));
     }
 
     vec4 linearToSRGB(in vec4 value) {
@@ -202,21 +193,20 @@ export function initializeSupernova() {
     scene.add(mesh);
 
     // Window resize handler
-    window.addEventListener('resize', onWindowResize);
+    // window.addEventListener('resize', onWindowResize);
 
-    render();
+    // render();
 }
+
 function render() {
     if(mesh !== null && mesh !== undefined && renderer !== null && renderer !== undefined && camera !== null && camera !== undefined) {
         requestAnimationFrame(render);
         mesh.material.uniforms.cameraPos.value.copy(camera.position);
 
-        // Rotating primarily around the right side of the mesh
-        const rotationSpeed = 0.0002; // Adjust rotation speed as needed
-        const rotationOffset = Math.PI / 0.52; // Offset to focus on the right side
-        const rotationRange = 0.15; // Adjust range of rotation as needed
+        const rotationSpeed = 0.0002;
+        const rotationOffset = Math.PI / 0.52;
+        const rotationRange = 0.15;
 
-        // Calculate rotation
         mesh.rotation.y = rotationOffset + Math.sin(performance.now() * rotationSpeed) * rotationRange;
 
         mesh.material.uniforms.frame.value++;
@@ -227,13 +217,13 @@ function render() {
 }
 
 
-function onWindowResize() {
-    if(camera !== null && camera !== undefined){
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    }
-}
+// function onWindowResize() {
+//     if(camera !== null && camera !== undefined){
+//     camera.aspect = window.innerWidth / window.innerHeight;
+//     camera.updateProjectionMatrix();
+//     renderer.setSize(window.innerWidth, window.innerHeight);
+//     }
+// }
 
 export function disposeScene() {
 
